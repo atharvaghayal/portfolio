@@ -1,0 +1,128 @@
+body {
+    background-color:#333333;
+    color:whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    padding: 0%;
+    transition: background-color 0.3s, color 0.3s;
+}
+.navbar{
+    background-color: #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px  rgba(0,0,0,0.1);
+}
+.navbar h1{
+    display: inline-block;
+    margin: 20px;
+}
+/* Home Tab */
+.navbar .tab1{
+    list-style: none;
+}
+.navbar .tab1 a {
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+/* Projects Tab */
+.navbar .right-tab{
+    list-style: none;
+}
+.navbar .right-tab a {
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+/* Blogs Tab */
+.navbar .right-tab1{
+    list-style: none;
+}
+.navbar .right-tab1 a {
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+/*Animation*/
+.Animation{
+    position: absolute;
+    top: 30%; /* Adjust the position slightly below the top */
+    left: 30%;
+    transform: translateX(-50%);
+    font-size: 3rem; /* Adjust font size as needed */
+    font-weight: bold;
+    display: flex;
+    gap: 0.1em; /* Add spacing between letters */
+}
+.bounce-letter {
+    display: inline-block;
+    animation: bounce 1s ease-in-out 3;
+    animation-delay: calc(var(--i) * 0.2s);
+  }
+  
+  .bounce-letter:nth-child(1) { --i: 0; }
+  .bounce-letter:nth-child(2) { --i: 1; }
+  .bounce-letter:nth-child(3) { --i: 2; }
+  .bounce-letter:nth-child(4) { --i: 3; }
+  .bounce-letter:nth-child(5) { --i: 4; }
+  .bounce-letter:nth-child(6) { --i: 5; }
+  .bounce-letter:nth-child(7) { --i: 6; }
+  .bounce-letter:nth-child(8) { --i: 7; }
+  .bounce-letter:nth-child(9) { --i: 8; }
+  .bounce-letter:nth-child(10) { --i: 9; }
+  .bounce-letter:nth-child(11) { --i: 10; }
+  .bounce-letter:nth-child(12) { --i: 11; }
+  .bounce-letter:nth-child(13) { --i: 12; }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+/*Main Intro body page */
+.Intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    max-width: 1200px;
+    padding: 190px;
+    border-radius: 10px; /* Smooth corners for the container */
+  }
+  
+  .text {
+    flex: 1;
+    padding: 10px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    
+  }
+  
+  .profile-pic {
+    position: absolute;
+    top: 50%; /* Vertically centers the image */
+    right: 10%; /* Aligns the image slightly inside from the right edge */
+    transform: translateY(-50%); /* Adjusts for perfect vertical centering */
+  }
+  
+  .circular-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover; /* Ensures the image fits well */
+    border: 5px solid #333333; /* Optional border */
+  }
