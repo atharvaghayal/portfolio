@@ -1,22 +1,25 @@
 body {
-    background-color:#333333;
-    color:whitesmoke;
+    background: linear-gradient(135deg, #005f73, #ffba08);
+    font-family: 'Poppins', sans-serif;
+    color:  black;
     font-family: Arial, Helvetica, sans-serif;
     margin: auto;
     padding: 0%;
     transition: background-color 0.3s, color 0.3s;
 }
 .navbar{
-    background-color: #333333;
+  background: linear-gradient(135deg, #005f73, #ffba08);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     box-shadow: 0 2px 5px  rgba(0,0,0,0.1);
+    height:0.9cm;
 }
 .navbar h1{
     display: inline-block;
     margin: 20px;
+    font-size: 1.5rem;
 }
 /* Home Tab */
 .navbar .tab1{
@@ -24,47 +27,86 @@ body {
 }
 .navbar .tab1 a {
     text-decoration: none;
-    color: white;
-    font-size: x-large;
-    font-weight: bold;
+    color: black;
+    font-size: 1.125rem;
     transition: color 0.3s;
+    padding: 10px 15px; /* Add spacing around text */
 }
 /* Projects Tab */
-.navbar .right-tab{
+.navbar .tab2{
     list-style: none;
 }
-.navbar .right-tab a {
+.navbar .tab2 a {
     text-decoration: none;
-    color: white;
-    font-size: x-large;
-    font-weight: bold;
+    color: black;
+    font-size: 1.125rem;
     transition: color 0.3s;
+    padding: 10px 15px; /* Add spacing around text */
 }
 /* Blogs Tab */
-.navbar .right-tab1{
+.navbar .tab3{
     list-style: none;
 }
-.navbar .right-tab1 a {
+.navbar .tab3 a {
     text-decoration: none;
-    color: white;
-    font-size: x-large;
-    font-weight: bold;
+    color: black;
+    font-size: 1.125rem;
     transition: color 0.3s;
+    padding: 10px 15px; /* Add spacing around text */
+}
+/*Hover effect css*/
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+/*hover for home tab*/
+.tab1 a:hover {
+  color: #333;
+  background-color:linear-gradient(135deg, #004953, #e6a907);
+  border-radius: 5px;
+}
+.tab1 a.active {
+  background-color: linear-gradient(135deg, #005f73, #ffba08);
+  color: black;
+  border-radius: 5px;
+}
+/*hover for project tab*/
+.tab2 a:hover {
+  color: #333;
+  background-color:linear-gradient(135deg, #004953, #e6a907);
+  border-radius: 5px;
+}
+.tab2 a.active {
+  background-color: linear-gradient(135deg, #005f73, #ffba08); 
+  color: black; 
+  border-radius: 5px; 
+}
+/*hover for project tab*/
+.tab3 a:hover {
+  color: #333; 
+  background-color:linear-gradient(135deg, #004953, #e6a907);
+  border-radius: 5px;
+}
+.tab3 a.active {
+  background-color: linear-gradient(135deg, #005f73, #ffba08);
+  color: black;
+  border-radius: 5px;
 }
 /*Animation*/
 .Animation{
     position: absolute;
-    top: 30%; /* Adjust the position slightly below the top */
+    top: 30%;
     left: 30%;
     transform: translateX(-50%);
-    font-size: 3rem; /* Adjust font size as needed */
+    font-size: 3rem;
     font-weight: bold;
     display: flex;
-    gap: 0.1em; /* Add spacing between letters */
+    gap: 0.1em;
 }
 .bounce-letter {
     display: inline-block;
-    animation: bounce 1s ease-in-out 3;
+    animation: bounce 1s ease-in-out 1;
     animation-delay: calc(var(--i) * 0.2s);
   }
   
@@ -107,22 +149,34 @@ body {
   .text {
     flex: 1;
     padding: 10px;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: x-large;
-    
+    font-family:"Roboto", sans-serif;
+    font-size: 1.2rem;
+    word-spacing: 2px;
   }
   
   .profile-pic {
     position: absolute;
-    top: 50%; /* Vertically centers the image */
-    right: 10%; /* Aligns the image slightly inside from the right edge */
-    transform: translateY(-50%); /* Adjusts for perfect vertical centering */
+    top: 55%;
+    right: 5%;
+    transform: translateY(-50%);
   }
   
   .circular-image {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%; /* Circular shape */
+    width: 280px;
+    height: 280px;
+    border-radius: 50%; 
     object-fit: cover; /* Ensures the image fits well */
-    border: 5px solid #333333; /* Optional border */
+    border: 5px solid black; /* Optional border */
+  }
+  .Projects {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    padding: 80px;
+    border-radius: 10px;
+    background:linear-gradient(135deg, #004959, #e6a907);
+  }
+  .Projects h1 {
+      padding: 30px;
   }
