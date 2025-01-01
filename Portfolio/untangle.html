@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untangle the Numbers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .game-container {
+            text-align: center;
+            max-width: 400px;
+            padding: 20px;
+            border: 2px solid #333;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        input[type="text"] {
+            font-size: 16px;
+            padding: 5px;
+            width: 90%;
+            margin-bottom: 10px;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .feedback {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Untangle the Numbers</h1>
+        <p>Guess the hidden 8-digit sequence!</p>
+        <input type="text" id="guess" placeholder="Enter your guess (0-8 digits)" maxlength="8">
+        <button onclick="makeGuess()">Submit</button>
+        <div id="feedback" class="feedback"></div>
+    </div>
+
+    <script>
+        async function makeGuess() {
+            const guess = document.getElementById("guess").value;
+            if (guess.length === 0 || guess.length > 8) {
+                alert("Enter a valid guess (up to 8 digits).");
+                return;
+            }
+
+            const response = await fetch('/guess', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ guess })
+            });
+
+            const data = await response.json();
+            document.getElementById("feedback").innerHTML = data.feedback;
+        }
+    </script>
+</body>
+</html>
