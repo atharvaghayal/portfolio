@@ -18,3 +18,5 @@
 - Functional contact form integrated with Gmail.
 - Blog editing and publishing system.
 - Interactive timeline for "Journey" section.
+
+![image](https://github.com/user-attachments/assets/c461def1-cb76-4d93-bb0a-dcd329d81a38)
