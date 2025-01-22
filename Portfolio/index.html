@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | UG Computer Science Student</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <img id="theme-icon" src="sun.png" alt="Toggle Theme">
+        </button>
+    </header>
+
+    <section id="home">
+        <h2></h2>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-card">
+            <h3>Project 1</h3>
+            <p>Description of Project 1.</p>
+        </div>
+        <div class="project-card">
+            <h3>Project 2</h3>
+            <p>Description of Project 2.</p>
+        </div>
+        <div class="project-card">
+            <h3>Project 3</h3>
+            <p>Description of Project 3.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: myemail@example.com</p>
+        <p>GitHub: <a href="https://github.com/example" target="_blank">github.com/example</a></p>
+        <div class="feedback-form">
+            <form action="https://example.com/submit-feedback" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="feedback" placeholder="Your Feedback" rows="5" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My Portfolio</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
