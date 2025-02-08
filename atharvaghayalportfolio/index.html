@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atharva ghayal | portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left" onclick="scrollToTop()">Atharva Ghayal</div>
+        <div class="nav-right">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About Me</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#blogs" class="nav-link">Blogs</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <button class="theme-toggle">Toggle Theme</button>
+        </div>
+    </nav>
+    
+    <section id="home" class="section">Home Section</section>
+    <section id="about" class="section">About Me Section</section>
+    <section id="projects" class="section">Projects Section</section>
+    <section id="blogs" class="section">Blogs Section</section>
+    <section id="contact" class="section">Contact Section</section>
+    
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
