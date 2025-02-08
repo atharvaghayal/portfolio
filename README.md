@@ -13,8 +13,3 @@
 ## 🚀 Tech Stack
 - Frontend: HTML, CSS, JavaScript
 - Tools: VS Code, Git,Jupyer-notebook.
-
-## 📌 Planned Features
-- Functional contact form integrated with Gmail.
-- Blog editing and publishing system.
-- Interactive timeline for "Journey" section.
