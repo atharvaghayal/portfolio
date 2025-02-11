@@ -11,16 +11,37 @@
     <nav class="navbar">
         <div class="nav-left" onclick="scrollToTop()">Atharva Ghayal</div>
         <div class="nav-right">
-            <a href="#home" class="nav-link">Home</a>
             <a href="#about" class="nav-link">About Me</a>
             <a href="#projects" class="nav-link">Projects</a>
             <a href="#blogs" class="nav-link">Blogs</a>
             <a href="#contact" class="nav-link">Contact</a>
-            <button class="theme-toggle">Toggle Theme</button>
+            <div class="theme-container">
+                <button class="theme-toggle">
+                    <span class="sun">🌙</span>
+                    <span class="moon">☀️</span>
+                </button>
+            </div>
         </div>
     </nav>
     
-    <section id="home" class="section">Home Section</section>
+    
+    <section id="home" class="home-section">
+        <div class="home-container">
+            <!-- Dynamic Greeting -->
+            <h2 id="greeting"></h2>
+    
+            <!-- Profile Photo -->
+            <div id="profile-container">
+                <img id="profile-photo" src="default-profile.png" alt="Profile Photo">
+                <div id="social-icons">
+                    <img id="github-icon" src="default-github.png" alt="GitHub">
+                    <img id="mail-icon" src="default-mail.png" alt="Mail">
+                    <img id="linkedin-icon" src="default-linkedin.png" alt="LinkedIn">
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <section id="about" class="section">About Me Section</section>
     <section id="projects" class="section">Projects Section</section>
     <section id="blogs" class="section">Blogs Section</section>
