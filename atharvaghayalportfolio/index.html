@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atharva Ghayal | Portfolio</title>
+    <title>atharva ghayal | portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
@@ -23,25 +23,34 @@
             </div>
         </div>
     </nav>
-
+    
+    
     <section id="home" class="home-section">
-        <div class="home-content">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Web Developer | Data Analyst | Tech Enthusiast</p>
-            <img src="profilephoto.jpg" alt="Atharva Ghayal" class="profile-photo">
+        <div class="home-container">
+            <!-- Dynamic Greeting -->
+            <h2 id="greeting"></h2>
+    
+            <!-- Profile Photo -->
+            <div id="profile-container">
+                <img id="profile-photo" src="profile photo.jpg" alt="Profile Photo">
+                <div id="social-icons">
+                    <img id="github-icon" src="default-github.png" alt="GitHub">
+                    <img id="mail-icon" src="default-mail.png" alt="Mail">
+                    <img id="linkedin-icon" src="default-linkedin.png" alt="LinkedIn">
+                </div>
+            </div>
         </div>
     </section>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hi, I'm Atharva! Passionate about web development, data analysis, and technology.</p>
-    </section>
-
-    <footer>
-        <p>Connect with me:</p>
-        <a href="https://github.com/atharvaghayal" target="_blank">
-            <img src="github-mark.png" alt="GitHub" class="social-icon">
-        </a>
-    </footer>
+    
+    <section id="about" class="section">About Me Section</section>
+    <section id="projects" class="section">Projects Section</section>
+    <section id="blogs" class="section">Blogs Section</section>
+    <section id="contact" class="section">Contact Section</section>
+    
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
