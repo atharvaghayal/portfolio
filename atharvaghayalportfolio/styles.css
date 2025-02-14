@@ -1,0 +1,195 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background 0.5s, color 0.5s;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    width:98%;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-left {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-right {
+    display: flex;
+    gap: 90px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.2);
+}
+
+/* Hide moon icon in light mode by default */
+.moon {
+    display: none;
+}
+
+/* Dark mode styles */
+.dark-mode {
+    --bg-color: #1C1C1C;
+    --text-color: #FAF3E0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Show moon icon and hide sun icon in dark mode */
+.dark-mode .sun {
+    display: none;
+}
+
+.dark-mode .moon {
+    display: inline;
+}
+
+
+.section {
+    height: 100vh;
+    padding: 80px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+:root {
+    --bg-color: #FAF3E0;
+    --text-color: #0B0B0B;
+}
+
+.dark-mode {
+    --bg-color: #1C1C1C;
+    --text-color: #FAF3E0;
+}
+
+/* Home Section */
+.home-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background: var(--bg-color);
+}
+
+@keyframes drawText {
+    0% {
+        stroke-dasharray: 0, 100%;
+    }
+    100% {
+        stroke-dasharray: 100%, 0;
+        fill: #333;
+    }
+}
+
+/* Dynamic Greeting */
+#greeting {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Profile Photo Styling */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Moves content to the left */
+    padding-right: 900px; /* Adjust spacing from the left */
+}
+
+.profile-3d {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    mix-blend-mode:var(--text-color);
+}
+
+.profile-3d img {
+    width: 100%;
+    transform: translateY(-20px);
+}
+
+.social-icons {
+    margin-top: 40px;
+    margin-right: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+/* Default color and transition effect */
+.social-icons a {
+    text-decoration: none;
+    color: gray;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect: Change color on hover */
+.social-icons a:hover {
+    color: orange; /* Change to any color you prefer */
+}
+
+/* Typing Animation */
+#greeting {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cursor {
+    font-weight: bold;
+    color: gray;
+}
+
+.blink {
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Theme-specific styles */
+body.dark-mode {
+    --border-color: white;
+}
+
+body:not(.dark-mode) {
+    --border-color: black;
+}
