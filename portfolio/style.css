@@ -1,7 +1,5 @@
 /* GENERAL */
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -207,7 +205,7 @@ section {
 }
 
 .section__text__p1 {
-  text-align: center;
+  text-align: left;
 }
 
 .section__text__p2 {
@@ -217,7 +215,7 @@ section {
 
 .title {
   font-size: 3rem;
-  text-align: center;
+  text-align: left;
 }
 
 #socials-container {
@@ -319,6 +317,7 @@ section {
   flex: 1;
   background: white;
   border-radius: 2rem;
+  box-shadow: black 0.1rem 0.1rem 0.5rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   text-align: center;
@@ -337,91 +336,37 @@ section {
 
 /* EXPERIENCE SECTION */
 
-#experience {
-  position: relative;
+ /* Experience Section Styling */
+ #experience {
+  text-align: center;
+  padding: 50px 20px;
+  background: white;
+  color: black;
 }
 
-.article-container {
-  display: flex;
-  text-align: initial;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 2.5rem;
-  justify-content: space-around;
+.experience-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Modern Glassmorphic Hologram Effect (for white backgrounds) */
-.details-container {
-  background: rgba(0, 0, 0, 0.05); /* Light glass effect */
-  backdrop-filter: blur(15px); /* Subtle blur */
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.6); /* Soft shadows */
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
+.experience-card {
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: gray 0.1rem 0.1rem 0.5rem;
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Floating card effect */
-.details-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -10px -10px 20px rgba(255, 255, 255, 0.5);
+.experience-card:hover {
+  transform: translateY(-10px);
+  box-shadow: black 0.1rem 0.1rem 0.5rem;
 }
-
-/* Subtle Flicker Effect */
-@keyframes flicker {
-  0% { opacity: 1; }
-  50% { opacity: 0.98; }
-  100% { opacity: 1; }
-}
-.details-container::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.02), transparent);
-  animation: flicker 3s infinite alternate;
-}
-
-/* Text Styling */
-.experience-sub-title {
-  color: #333; /* Dark gray */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Article Styling */
-article {
-  background: rgba(255, 255, 255, 0.7);
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover Effect on Articles */
-article:hover {
-  transform: scale(1.05);
-  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Experience Container Animation */
-@keyframes hologram-move {
-  0% { transform: rotateX(0deg) rotateY(0deg); }
-  50% { transform: rotateX(2deg) rotateY(2deg); }
-  100% { transform: rotateX(0deg) rotateY(0deg); }
-}
-
-.experience-details-container {
-  animation: hologram-move 5s infinite alternate ease-in-out;
-}
-
-article .icon {
-  cursor: default;
-}
-
 /* PROJECTS SECTION */
 
 #projects {
