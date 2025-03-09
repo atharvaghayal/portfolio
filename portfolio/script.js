@@ -52,9 +52,3 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("logo").addEventListener("dblclick", function() {
     window.location.href = "riddlegame/riddle.html"; // Redirects to the riddle page
 });
-
-window.addEventListener("load", function () {
-    setTimeout(function () {
-      window.scrollTo(0, 0);
-    }, 0);
-  });
