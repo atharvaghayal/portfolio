@@ -52,3 +52,42 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("logo").addEventListener("dblclick", function() {
     window.location.href = "riddlegame/riddle.html"; // Redirects to the riddle page
 });
+
+// contact form js code.
+// Open Modal
+document.getElementById("openForm").onclick = function() {
+    document.getElementById("contactModal").style.display = "block";
+};
+
+// Close Modal
+document.querySelector(".close").onclick = function() {
+    document.getElementById("contactModal").style.display = "none";
+};
+
+// Form Submission
+document.getElementById("contactForm").onsubmit = function(event) {
+    // contact form js code.
+// Open Modal
+document.getElementById("openForm").onclick = function() {
+    document.getElementById("contactModal").style.display = "block";
+};
+
+// Close Modal
+document.querySelector(".close").onclick = function() {
+    document.getElementById("contactModal").style.display = "none";
+};
+
+// Form Submission (No File Download, Direct Email)
+document.getElementById("contactForm").onsubmit = function() {
+    alert("Thank you! Your message has been sent successfully.");
+};
+};
+
+// Function to Save Data as a File
+function saveToFile(data) {
+    let blob = new Blob([data], { type: "text/plain" });
+    let anchor = document.createElement("a");
+    anchor.href = URL.createObjectURL(blob);
+    anchor.download = "contact_data.txt";
+    anchor.click();
+}
