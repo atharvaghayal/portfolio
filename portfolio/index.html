@@ -293,9 +293,34 @@
         </div>
       </div>
     </section>
-    <footer>
-      
-    </footer>
-    <script src="script.js"></script>
-  </body>
-</html>
+     <!-- "Get in Touch" Button -->
+     <button id="openForm">Get in Touch</button>
+
+     <!-- Contact Form Modal -->
+     <div id="contactModal" class="modal">
+         <div class="modal-content">
+             <span class="close">&times;</span>
+             <h2>Contact Us</h2>
+             <form id="contactForm" action="https://formsubmit.co/atharva160504@gmail.com" method="POST">
+              <label for="fullName">Full Name:</label>
+              <input type="text" id="fullName" name="Full Name" required>
+          
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="Email" required>
+          
+              <label for="phone">Phone Number:</label>
+              <input type="tel" id="phone" name="Phone" required>
+          
+              <label for="message">Message:</label>
+              <textarea id="message" name="Message" required></textarea>
+          
+              <input type="hidden" name="_next" value="thank-you.html">
+              <input type="hidden" name="_captcha" value="false">
+          
+              <button type="submit">Submit</button>
+              </form>          
+         </div>
+     </div>
+     <script src="script.js"></script>
+   </body>
+ </html> 
