@@ -14,7 +14,7 @@ const cursorElement = document.querySelector(".cursor");
 
 const texts = [
     "Engineering student",
-    "Data Analyst enthusiast",
+    "Aspiring Data Analyst",
     "Developer",
     "Chess Player"
 ];
