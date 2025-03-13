@@ -91,3 +91,12 @@ function saveToFile(data) {
     anchor.download = "contact_data.txt";
     anchor.click();
 }
+
+/* MOBILE RESPONSIVENESS */
+function toggleMenu() {
+    const menu = document.querySelector(".menu-links");
+    const icon = document.querySelector(".hamburger-icon");
+
+    menu.classList.toggle("open");
+    icon.classList.toggle("open");
+}
