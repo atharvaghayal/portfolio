@@ -49,10 +49,6 @@ function typeEffect() {
 document.addEventListener("DOMContentLoaded", () => {
     setTimeout(typeEffect, 1000); // Start effect after 1s
 });
-document.getElementById("logo").addEventListener("dblclick", function() {
-    window.location.href = "riddlegame/riddle.html"; // Redirects to the riddle page
-});
-
 // contact form js code.
 // Open Modal
 document.getElementById("openForm").onclick = function() {
@@ -99,4 +95,67 @@ function toggleMenu() {
 
     menu.classList.toggle("open");
     icon.classList.toggle("open");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    function updateBackground() {
+        let hour = new Date().getHours();
+        let gradient;
+
+        if (hour >= 5 && hour < 12) { 
+            gradient = "linear-gradient(to right, #FFD700, #FFA500)"; // Morning (Gold-Orange)
+        } else if (hour >= 12 && hour < 17) { 
+            gradient = "linear-gradient(to right, #FF8C00, #FF4500)"; // Afternoon (Orange-Red)
+        } else if (hour >= 17 && hour < 20) { 
+            gradient = "linear-gradient(to right, #FF6347, #8B0000)"; // Evening (Tomato-DarkRed)
+        } else { 
+            gradient = "linear-gradient(to right, #2C3E50, #000000)"; // Night (Dark Blue-Black)
+        }
+
+        if (!document.body.classList.contains("dark-mode")) {
+            document.body.style.background = gradient;
+        }
+    }
+
+    function toggleTheme() {
+        document.body.classList.toggle("dark-mode");
+        let isDark = document.body.classList.contains("dark-mode");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        
+        // Ensure dark mode background applies
+        if (isDark) {
+            document.body.style.background = "linear-gradient(to right, #001F3F, #000000)";
+        } else {
+            updateBackground();
+        }
+    }
+
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        document.body.style.background = "linear-gradient(to right, #001F3F, #000000)";
+    } else {
+        updateBackground();
+    }
+
+    document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
+});
+
+function toggleTheme() {
+    document.body.classList.toggle("dark-mode");
+    let isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    // Update all necessary sections and containers
+    document.querySelectorAll(".details-container, .experience-container, .experience-card, .color-container").forEach(box => {
+        box.style.background = isDark ? "rgba(255, 255, 255, 0.1)" : "white";
+        box.style.border = isDark ? "1px solid #555" : "1px solid rgb(163, 163, 163)";
+        box.style.boxShadow = isDark ? "0px 0px 10px rgba(255, 255, 255, 0.2)" : "black 0.1rem 0.1rem 0.5rem";
+    });
+
+    // Ensure dark mode background applies
+    if (isDark) {
+        document.body.style.background = "linear-gradient(to right, #001F3F, #000000)";
+    } else {
+        updateBackground();
+    }
 }
