@@ -1,0 +1,558 @@
+/* ===== GLOBAL STYLES ===== */
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Itim', cursive;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ===== NAVBAR ===== */
+
+/* ====== Navbar Reveal Animations ====== */
+nav.navbar-reveal {
+  animation: navbarSlideDown 100s ease-in-out forwards;
+}
+
+@keyframes navbarSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav {
+  position: relative; /* or just remove `position: fixed;` */
+  z-index: 10; /* optional - keep above other elements */
+}
+
+#desktop-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 5%;
+  background-color: var(--nav-bg);
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3742fa;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #1e90ff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 1.1rem;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: #3742fa;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ===== THEME TOGGLE ===== */
+
+:root {
+  --bg-color: linear-gradient(to right, #f1f2f6, #dfe4ea);
+  --text-color: #2f3542;
+  --nav-bg: #ffffffee;
+}
+
+body.dark-mode {
+  --bg-color: #232329;
+  --text-color: #ffffff;
+  --nav-bg: #1e1e1e;
+}
+
+.theme-toggle {
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* === DARK MODE === */
+body.dark-mode {
+  background-color: #232329;
+  color: #ffffff;
+}
+
+body.dark-mode .btn-color-2 {
+  background-color: #0c1445;
+  color: #ffffff;
+  border-color: #0c1445;
+}
+
+body.dark-mode .btn-color-2:hover {
+  background-color: #1e2f8a;
+  color: white;
+}
+
+body.dark-mode .experience-card {
+  background-color: #2e2e33;
+  color: white;
+}
+
+body.dark-mode .color-container {
+  background-color: #2e2e33;
+}
+
+body.dark-mode .custom-footer {
+  background-color: #1b1b1e;
+  color: #ffffff;
+}
+
+body.dark-mode .footer-right a {
+  color: #ffffff;
+}
+
+body.dark-mode .project-title,
+body.dark-mode .title,
+body.dark-mode .section__text__p1,
+body.dark-mode .section__text__p2 {
+  color: #ffffff;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 4rem 5%;
+}
+
+/* ===== PROFILE ===== */
+#profile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 80vh;
+}
+
+.section__text {
+  max-width: 500px;
+}
+
+.section__text__p1,
+.section__text__p2 {
+  font-size: 1.2rem;
+  color: #57606f;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2f3542;
+  margin: 0.5rem 0;
+}
+
+.cursor {
+  color: #2f3542;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.btn-container {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-color-1 {
+  background-color: #3742fa;
+  color: #fff;
+}
+
+.btn-color-1:hover {
+  background-color: #1e90ff;
+}
+
+.btn-color-2 {
+  background-color: #dfe4ea;
+  color: #3742fa;
+  border: 2px solid #3742fa;
+}
+
+.btn-color-2:hover {
+  background-color: #3742fa;
+  color: white;
+}
+
+/* ===== ICONS ===== */
+#socials-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.icon {
+  width: 30px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+/* ===== ABOUT / EXPERIENCE ===== */
+#about .text-container,
+#experience .experience-container {
+  margin-top: 2rem;
+}
+
+.about-details-container,
+.experience-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.experience-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+  flex: 1 1 300px;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+}
+
+.experience-card h2 {
+  color: #3742fa;
+  margin-bottom: 1rem;
+}
+
+/* ===== PROJECTS ===== */
+.article-container {
+  width: 100%;
+  height: 300px; /* Set the card image height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.project-img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-img {
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.project-img:hover {
+  transform: scale(1.02);
+}
+
+.color-container {
+  background-color: #f1f2f6;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+/* ===== CONTACT FORM SECTION ===== */
+/* Button styling */
+.get-in-touch {
+  font-family: 'Itim', cursive;
+  padding: 12px 28px;
+  font-size: 18px;
+  background-color: #222;
+  color: #fff;
+  border: 2px solid #000;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.get-in-touch:hover {
+  background-color: #fff;
+  color: #222;
+  border: 2px solid #222;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* Contact Form Container */
+#contact-form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Contact Form Box */
+#contact-form {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  position: relative;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.4s ease forwards;
+  font-family: 'Itim', cursive;
+}
+
+/* Form Elements */
+#contact-form h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  text-align: center;
+  color: darkslategrey;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  resize: none;
+}
+
+#contact-form button[type="submit"] {
+  background-color: #222;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+#contact-form button[type="submit"]:hover {
+  background-color: #444;
+}
+
+/* Close Button */
+#close-form {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#close-form:hover {
+  color: #000;
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ========== Footer Styling ========== */
+.custom-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+  background-color: #0f111a;
+  color: #f1f1f1;
+  font-family: 'Itim', cursive;
+  animation: fadeInUp 1s ease-in;
+  border-top: 1px solid #444;
+}
+
+.custom-footer p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.message-btn {
+  margin-top: 10px;
+  padding: 8px 20px;
+  background-color: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.message-btn:hover {
+  background-color: #16a34a;
+  transform: scale(1.05);
+}
+
+.footer-right a {
+  color: #f1f1f1;
+  font-size: 22px;
+  margin-left: 18px;
+  transition: transform 0.3s ease;
+}
+
+.footer-right a:hover {
+  transform: scale(1.2);
+  color: #22c55e;
+}
+
+/* Popup Styling */
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 17, 26, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-box {
+  background: #1e1f2b;
+  padding: 30px 50px;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  animation: popIn 0.4s ease-in-out;
+}
+
+.popup-box p {
+  font-size: 20px;
+  margin-top: 12px;
+}
+
+.whatsapp-icon {
+  font-size: 40px;
+  color: #25d366;
+}
+
+/* Close icon */
+.close-icon {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+    
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .experience-container {
+    flex-direction: column;
+  }
+
+  #profile {
+    flex-direction: column;
+  }
+
+  .section__pic-container {
+    margin-bottom: 2rem;
+  }
+}
