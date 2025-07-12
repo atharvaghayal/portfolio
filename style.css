@@ -291,46 +291,75 @@ section {
 }
 
 /* ===== PROJECTS ===== */
-.article-container {
-  width: 100%;
-  height: 300px; /* Set the card image height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  border-radius: 12px;
-  background-color: #ffffff;
+.projects-section {
+  background-color: #0f172a;
+  padding: 4rem 2rem;
+  color: #fff;
 }
 
-.project-img {
-  height: 100%;
-  width: auto;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.project-img {
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-
-.project-img:hover {
-  transform: scale(1.02);
-}
-
-.color-container {
-  background-color: #f1f2f6;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.projects-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-top: 2rem;
-  transition: background-color 0.3s ease;
 }
 
+.project-card {
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.project-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-content {
+  padding: 1.2rem;
+}
+
+.project-content h2 {
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.project-tech {
+  font-size: 0.85rem;
+  color: #00ffe0;
+  margin-bottom: 1rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-glow {
+  background: linear-gradient(90deg, #00ffe0, #00b7ff);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  color: #000;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-glow:hover {
+  background: linear-gradient(90deg, #00b7ff, #00ffe0);
+  transform: scale(1.05);
+}
 /* ===== CONTACT FORM SECTION ===== */
 /* Button styling */
 .get-in-touch {
