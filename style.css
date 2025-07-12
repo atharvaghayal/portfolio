@@ -290,76 +290,128 @@ section {
   margin-bottom: 1rem;
 }
 
-/* ===== PROJECTS ===== */
+ /* ===== PROJECTS ===== */
+:root {
+  --bg-color: linear-gradient(to right, #f1f2f6, #dfe4ea);
+  --text-color: #2f3542;
+  --nav-bg: #ffffffee;
+}
+
+body.dark-mode {
+  background-color: #94a1b5;
+  color: #ffffff;
+}
+
 .projects-section {
-  background-color: #0f172a;
+  background-color: var(--projects-bg);
+  color: var(--project-text-color);
   padding: 4rem 2rem;
+}
+
+/* Light mode adjustments for inner elements */
+body:not(.dark-mode) .project-tech {
+  color: #007acc;
+}
+
+body:not(.dark-mode) .btn-glow {
+  background: linear-gradient(90deg, #007acc, #00b7ff);
   color: #fff;
 }
 
-.projects-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin-top: 2rem;
-}
-
-.project-card {
-  border-radius: 20px;
-  overflow: hidden;
-  transition: transform 0.4s ease;
-  box-shadow: 0 10px 25px rgba(0, 255, 255, 0.1);
+/* Optional dark mode glass fix */
+body.dark-mode .project-card {
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--project-text-color);
 }
 
-.project-card:hover {
-  transform: translateY(-10px) scale(1.02);
+body:not(.dark-mode) .project-card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--project-text-color);
 }
 
-.project-image img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
 
-.project-content {
-  padding: 1.2rem;
-}
-
-.project-content h2 {
-  margin: 0.5rem 0;
-  font-size: 1.3rem;
-}
-
-.project-tech {
-  font-size: 0.85rem;
-  color: #00ffe0;
-  margin-bottom: 1rem;
-}
-
-.project-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.btn-glow {
-  background: linear-gradient(90deg, #00ffe0, #00b7ff);
-  border: none;
-  padding: 0.6rem 1.2rem;
+/* Glassmorphism still works but we adjust contrasts */
+body.light-theme .project-card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   color: #000;
-  font-weight: 600;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  text-decoration: none;
 }
 
-.btn-glow:hover {
-  background: linear-gradient(90deg, #00b7ff, #00ffe0);
-  transform: scale(1.05);
+body.light-theme .project-tech {
+  color: #007acc;
 }
+
+body.light-theme .btn-glow {
+  background: linear-gradient(90deg, #007acc, #00b7ff);
+  color: #fff;
+}
+
+  .projects-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 2rem;
+  }
+
+  .project-card {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .project-content {
+    padding: 1.2rem;
+  }
+
+  .project-content h2 {
+    margin: 0.5rem 0;
+    font-size: 1.3rem;
+  }
+
+  .project-tech {
+    font-size: 0.85rem;
+    color: #00ffe0;
+    margin-bottom: 1rem;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .btn-glow {
+    background: linear-gradient(90deg, #00ffe0, #00b7ff);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    color: #000;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .btn-glow:hover {
+    background: linear-gradient(90deg, #00b7ff, #00ffe0);
+    transform: scale(1.05);
+  }
+
 /* ===== CONTACT FORM SECTION ===== */
 /* Button styling */
 .get-in-touch {
