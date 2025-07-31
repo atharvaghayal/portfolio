@@ -37,6 +37,20 @@ nav.navbar-reveal {
   animation: navbarSlideDown 100s ease-in-out forwards;
 }
 
+/* === Navbar Hide / Show Transitions === */
+.navbar-hide {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 0.4s ease-in-out;
+  pointer-events: none;
+}
+
+.navbar-show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.4s ease-in-out;
+}
+
 @keyframes navbarSlideDown {
   0% {
     opacity: 0;
@@ -58,9 +72,25 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 5%;
-  background-color: var(--nav-bg);
-  transition: background-color 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+body.dark-mode #desktop-nav {
+  background: rgba(30, 30, 30, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 768px) {
+  #desktop-nav {
+    flex-direction: column;
+    padding: 1rem 2rem;
+  }
 }
 
 .logo {
@@ -167,23 +197,72 @@ body.dark-mode .section__text__p2 {
 }
 
 /* ===== SECTIONS ===== */
+
 section {
   padding: 4rem 5%;
 }
 
 /* ===== PROFILE ===== */
+.floating-icons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* ⛔ prevents blocking clicks */
+  z-index: 0; /* stays behind content */
+}
+
+.icon-float {
+  position: absolute;
+  width: 50px;
+  opacity: 0.15;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Random positions — adjust freely */
+/* === Floating Icon Positions === */
+.icon1  { top: 10%; left: 20%; animation-delay: 0s; }          /* Python */
+.icon2  { top: 30%; left: 75%; animation-delay: 1s; }          /* Excel */
+.icon3  { top: 60%; left: 10%; animation-delay: 2s; }          /* GitHub */
+.icon4 { top: 78%; left: 60%; animation-delay: 0.5s; } /* VS Code */
+.icon6  { top: 15%; left: 75%; animation-delay: 2.5s; }        /* CSS */
+.icon7  { top: 40%; left: 30%; animation-delay: 0.2s; }        /* React */
+.icon8  { top: 70%; left: 20%; animation-delay: 1.2s; }        /* Power BI */
+.icon9  { top: 50%; left: 80%; animation-delay: 2.2s; }        /* MongoDB */
+.icon10 { top: 35%; left: 50%; animation-delay: 1.8s; }        /* Streamlit */
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.icon-float {
+  width: 42px; /* previously 50px */
+  opacity: 0.13;
+  border: 1px dashed red;
+  animation: float 6s ease-in-out infinite, spin 20s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 #profile {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-  min-height: 80vh;
+  justify-content: center; /* ✅ cleaner alignment */
+  gap: 2rem; /* ✅ explicit control over spacing */
 }
 
 .section__text {
   max-width: 500px;
+  padding: 1rem;
 }
-
 .section__text__p1,
 .section__text__p2 {
   font-size: 1.2rem;
@@ -260,6 +339,10 @@ section {
 }
 
 /* ===== ABOUT / EXPERIENCE ===== */
+section {
+  scroll-margin-top: 80px; /* ✅ same as your navbar height */
+}
+
 .about-me {
   background-color: #0f172a;
   padding: 4rem 2rem;
@@ -296,6 +379,9 @@ section {
 }
 
   /* ===== PROJECTS ===== */
+  section {
+  scroll-margin-top: 80px; /* ✅ same as your navbar height */
+}
 :root {
   --bg-color: linear-gradient(to right, #f1f2f6, #dfe4ea);
   --text-color: #2f3542;
@@ -319,7 +405,7 @@ body:not(.dark-mode) .project-tech {
 }
 
 body:not(.dark-mode) .btn-glow {
-  background: linear-gradient(90deg, #007acc, #00b7ff);
+  background: #222;
   color: #fff;
 }
 
