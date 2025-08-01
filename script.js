@@ -100,48 +100,21 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 // ========Contact form functionality========
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("contact-form");
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value
-    };
-    fetch("https://script.google.com/macros/s/AKfycbx5jm3KOWOzkqg0Sxc8G5ywTfntMJVab-qHcO9hBG59KiI_GHLJNAMMy2FoRddE4dk/exec", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-      .then(res => res.json())
-      .then(response => {
-        alert("Submitted successfully!");
-        form.reset();
-      })
-      .catch(error => {
-        alert("Something went wrong.");
-        console.error(error);
-      });
-  });
-});
+
+    
 // ===== WhatsApp Popup Functionality =====
+
 document.addEventListener("DOMContentLoaded", () => {
-  const messageBtn = document.getElementById("message-btn");
-  const popup = document.getElementById("whatsapp-popup");
-  const closePopup = document.getElementById("close-popup");
-  messageBtn.addEventListener("click", () => {
-    popup.style.display = "flex";
-  });
-  closePopup.addEventListener("click", () => {
-    popup.style.display = "none";
-  });
-  // Close when clicked outside
-  popup.addEventListener("click", (e) => {
-    if (e.target === popup) {
-      popup.style.display = "none";
-    }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll("section").forEach(section => {
+    section.classList.add("slide-up");
+    observer.observe(section);
   });
 });
