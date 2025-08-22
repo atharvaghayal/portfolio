@@ -431,19 +431,20 @@ section {
 
 /* Experience Section */
 .experience-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Always 3 per row */
   gap: 2rem;
+  justify-items: center; /* Center align cards */
 }
 
 .experience-card {
-  background-color: var(--card-bg);
+  width: 100%;
+  max-width: 300px;  /* Keep consistent card size */
   padding: 1.5rem;
   border-radius: 12px;
+  background-color: var(--card-bg);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s;
-  flex: 1 1 clamp(250px, 30vw, 300px); /* Use clamp for flexible width */
 }
 
 .experience-card:hover {
