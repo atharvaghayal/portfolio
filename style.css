@@ -182,7 +182,7 @@ body.dark-mode #desktop-nav {
 /* === DARK MODE === */
 body.dark-mode {
   background-color: #111827;
-  color: #f3f4f6;
+  color: #E4E4E7;
 }
 
 body.dark-mode .btn-color-2 {
@@ -833,3 +833,4 @@ body:not(.dark-mode) .project-card {
   max-width: 300px; /* uniform card size */
   min-width: 250px; /* prevent cards shrinking too much */
 }
+
