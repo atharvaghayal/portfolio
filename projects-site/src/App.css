@@ -1,0 +1,93 @@
+/* Global Reset and Dark Background */
+html, body {
+  margin: 0;
+  padding: 0;
+  /* Set a solid dark color to ensure no browser default white background shows through */
+  background-color: #121212; 
+}
+
+.App {
+  /* Use Inter font for a clean, modern look */
+  font-family: 'Inter', sans-serif;
+  /* Ensure the App container takes up at least the full viewport height */
+  min-height: 100vh;
+  /* Applying the main dark gradient background for the page */
+  background: linear-gradient(180deg, #1c4164, #0f1a21 68%, #121212);
+}
+
+/* Top navigation styles */
+.top-nav {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: auto;
+  z-index: 60;
+  padding: 18px 20px;
+  background: transparent;
+}
+.top-link {
+  color: #fff;
+  /* Make the box clearly visible by default */
+  background: rgba(255,255,255,0.06);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.15s ease, transform 0.12s ease, box-shadow 0.15s ease;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.45);
+}
+.top-link:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.55);
+}
+
+/* Main content wrapper - no card background */
+.content-wrapper {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto 100px auto;
+  position: relative;
+  padding: 0;
+}
+
+/* Invitation title - left aligned */
+.projects-invite {
+  margin: 22px 0 14px 18px;
+  padding: 0;
+  color: #ffffff;
+  font-size: 1.25rem;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-align: left;
+  display: block;
+  z-index: 5;
+}
+
+/* Ensure enough space between the title and the grid so they never overlap */
+.chroma-grid {
+  margin-top: 6px;
+}
+
+/* Add extra gap between the navbar and the content */
+.content-wrapper {
+  padding-top: 20px;
+}
+
+@media (max-width: 480px) {
+  .projects-invite {
+    font-size: 1.05rem;
+    margin-left: 14px;
+    margin-top: 16px;
+  }
+  
+  .content-wrapper {
+    width: 95%;
+  }
+}
