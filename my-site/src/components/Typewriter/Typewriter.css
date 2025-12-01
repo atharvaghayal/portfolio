@@ -1,0 +1,31 @@
+.typewriter {
+  position: relative;
+  /* This helps align the cursor */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* This pseudo-element IS the cursor */
+.cursor-element::after {
+  /* --- THIS IS THE CHANGE --- */
+  content: '_'; /* Use an underscore instead of a pipe */
+  
+  /* Blinking animation */
+  animation: blink 0.7s infinite;
+  
+  /* Positioning */
+  margin-left: 2px;
+  font-weight: 600; /* Make it a bit bolder */
+  position: relative;
+  bottom: 0.1em; /* Nudge it down slightly to align better */
+}
+
+/* Blinking animation keyframes */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

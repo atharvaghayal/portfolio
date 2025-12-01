@@ -1,0 +1,58 @@
+/*
+ * ClickSpark.css
+ * This file styles the click spark animation.
+ */
+
+.spark-container {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  
+  /* Centers the container on the cursor */
+  transform: translate(-50%, -50%);
+}
+
+/* This is the individual spark particle (NOW A LINE) */
+.spark-particle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  /* --- Style as a Line --- */
+  width: var(--size);   /* This is the LINE LENGTH */
+  height: 2px;          /* This is the LINE THICKNESS */
+  background: var(--color);
+  border-radius: 2px;   /* Makes the line have soft edges */
+  
+  /* Set origin to the center for rotation */
+  transform-origin: center; 
+  
+  /* * This is the starting state. 
+   * We rotate it to its angle, but keep it at the center (0,0)
+   * We use scale(0) to make it invisible initially.
+   */
+  transform: rotate(var(--angle)) translate(0, 0) scale(0);
+  
+  /* Run the animation */
+  animation: spark-fly var(--duration) ease-out forwards;
+}
+
+@keyframes spark-fly {
+  0% {
+    /* Start small and centered */
+    transform: rotate(var(--angle)) translate(0, 0) scale(0.3);
+    opacity: 0.7;
+  }
+  50% {
+    /* Grow to full size */
+    transform: rotate(var(--angle)) translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    /* * Fly outwards along its rotated X-axis by the radius,
+     * then fade out and shrink.
+     */
+    transform: rotate(var(--angle)) translateX(var(--radius)) scale(0);
+    opacity: 0;
+  }
+}

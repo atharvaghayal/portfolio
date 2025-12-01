@@ -1,0 +1,158 @@
+/* The full-screen overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 5, 20, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+/* The modal card itself */
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  background: rgba(30, 28, 40, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  z-index: 1001;
+}
+
+.modal-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #fff, #b19eef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* The 'X' close button */
+.close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.close-btn:hover {
+  color: #fff;
+}
+
+/* The Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.form-group label {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.form-input,
+.form-textarea {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #b19eef;
+  box-shadow: 0 0 15px rgba(177, 158, 239, 0.2);
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  background: #fff;
+  color: #5227ff;
+  font-weight: 700;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  background: #b19eef;
+  color: #1A142A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(177, 158, 239, 0.3);
+}
+
+/* --- Button Disabled State --- */
+.submit-btn:disabled {
+  background: #aaa;
+  color: #555;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+
+/* --- Success/Error Message Styles --- */
+.status-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.status-message h3 {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.status-message p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 300px;
+}
+
+.status-icon {
+  font-size: 4rem;
+}
+
+.status-message.success .status-icon {
+  color: #27ae60; /* Green */
+}
+
+.status-message.error .status-icon {
+  color: #c0392b; /* Red */
+}

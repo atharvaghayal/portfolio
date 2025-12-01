@@ -1,0 +1,161 @@
+/* --- Glassmorphism Footer Card --- */
+.footer-card {
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(30, 28, 40, 0.7); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+  
+  /* --- THIS IS THE FIX --- */
+  /* This centers the card on the page */
+  margin: 0 auto 3rem auto; /* Top, Left/Right, Bottom */
+
+  /* This ensures the card has NO bottom padding */
+  padding: 2rem 2rem 0 2rem; 
+  
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- 3-Column Grid Layout --- */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* --- Left Column --- */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-text {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.footer-note-btn {
+  background: #fff;
+  color: #5227ff;
+  font-weight: 700;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  width: 150px;
+  transition: all 0.3s ease;
+}
+
+.footer-note-btn:hover {
+  background: #b19eef;
+  color: #1A142A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(177, 158, 239, 0.3);
+}
+
+/* --- Center Column --- */
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.views-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.count-up-text {
+  font-size: 3rem;
+  font-weight: 700;
+  /* Theme Gradient Text */
+  background: linear-gradient(90deg, #fff, #b19eef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.views-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.github-views img {
+  border-radius: 4px; /* Matches the badge style */
+}
+
+/* --- Right Column --- */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-socials a {
+  font-size: 1.5rem; /* Smaller icons to match screenshot */
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #fff;
+  transform: scale(1.1) translateY(-2px);
+}
+
+/* --- Copyright Bar --- */
+.footer-copyright {
+  position: relative;
+  
+  /* Adds 2rem padding ABOVE the line, but only 1.5rem BELOW */
+  padding: 2rem 0 1.5rem 0; 
+  
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  width: 100%;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr; /* Stack columns */
+    gap: 3rem;
+  }
+  .footer-left, .footer-center, .footer-right {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-card {
+    padding: 2rem 1rem 0 1rem; /* No bottom padding on mobile card */
+    margin: 0 auto 2rem auto; /* Tighter bottom margin on mobile */
+  }
+  .footer-copyright {
+     padding: 2rem 0 1.5rem 0; /* Same padding on mobile */
+  }
+}

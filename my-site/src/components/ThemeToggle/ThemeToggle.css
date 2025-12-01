@@ -1,0 +1,101 @@
+/* ThemeToggle.css */
+
+.theme-toggle-btn {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle-btn:focus {
+  outline: 2px solid rgba(177, 158, 239, 0.6);
+  outline-offset: 3px;
+}
+
+.theme-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Light theme button styles */
+body.light-theme .theme-toggle-btn {
+  border: 1px solid rgba(107, 107, 255, 0.3);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 15px rgba(138, 138, 255, 0.2);
+}
+
+body.light-theme .theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #6B6BFF;
+  box-shadow: 0 6px 20px rgba(107, 107, 255, 0.3);
+}
+
+body.light-theme .theme-toggle-icon {
+  color: #6B6BFF;
+}
+
+body.light-theme .theme-toggle-btn:focus {
+  outline: 2px solid #6B6BFF;
+  outline-offset: 3px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .theme-toggle-btn {
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .theme-toggle-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-toggle-btn {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .theme-toggle-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Animation for icon transition */
+.theme-toggle-icon svg {
+  transition: opacity 0.2s ease;
+}
+
+/* Ensure button stays above other elements */
+.theme-toggle-btn {
+  position: fixed;
+  z-index: 9999;
+}

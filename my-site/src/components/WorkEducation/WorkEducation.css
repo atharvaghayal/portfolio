@@ -1,0 +1,135 @@
+.work-edu-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+/* --- Toggle Container --- */
+.toggle-container {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.4rem;
+  border-radius: 0.8rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.toggle-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toggle-btn:hover {
+  color: #fff;
+}
+
+/* Active State */
+.toggle-btn.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Cards Layout --- */
+.cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* --- Individual Card --- */
+.info-card {
+  flex: 1; 
+  min-width: 300px;
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden; 
+  background-size: cover;
+  background-position: center;
+}
+
+/* Sets specific width for B.Tech card */
+.info-card.wide {
+  flex: 0 1 450px;
+  min-width: auto; 
+}
+
+.info-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* --- Logo Image Style --- */
+.card-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  /* Ensures logo fits without stretching */
+  object-fit: cover; 
+  /* Adds a white background for logos that are transparent */
+  background-color: white; 
+}
+
+
+/* --- Text Details (with readability shadows) --- */
+.card-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.3rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6); 
+}
+
+.card-role {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0.3rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+
+.card-date {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .cards-row {
+    flex-direction: column;
+  }
+  .info-card {
+    width: 100%;
+    flex: 1;
+  }
+  .info-card.wide {
+    width: 100%;
+    max-width: none;
+    flex: 1;
+  }
+}

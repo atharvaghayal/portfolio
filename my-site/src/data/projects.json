@@ -1,0 +1,20 @@
+[
+  {
+    "id": "projects-site",
+    "title": "Projects Site",
+    "short": "A collection of demo projects and builds.",
+    "description": "This repository contains several small projects and demos built with Create React App. Preview the source or open the site.",
+    "image": "./assets/logo.png",
+    "link": "../projects-site/public/index.html",
+    "github": ""
+  },
+  {
+    "id": "blogs-site",
+    "title": "Blogs Site",
+    "short": "Personal blog templates and assets.",
+    "description": "A static blog site with templates and example posts. Useful as a content starter.",
+    "image": "./assets/logo.png",
+    "link": "../blogs-site/index.html",
+    "github": ""
+  }
+]
