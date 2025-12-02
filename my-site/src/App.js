@@ -107,7 +107,17 @@ function App() {
                   Projects
                 </a>
               </li>
-              <li><a href="#blogs">Blogs</a></li>
+              <li>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = 'http://localhost:3002/';
+                  }}
+                >
+                  Blogs
+                </a>
+              </li>
             </ul>
           </div>
           

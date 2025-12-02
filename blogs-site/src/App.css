@@ -1,0 +1,34 @@
+:root{--bg:#000;--card-bg:rgba(255,255,255,0.03);--text:#ffffff}
+html,body,#root{height:100%;margin:0}
+body{background:var(--bg);font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;color:var(--text)}
+.top-nav{position:fixed;top:18px;left:18px;right:18px;display:flex;justify-content:space-between;align-items:center;z-index:50}
+.top-link{color:var(--text);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px;backdrop-filter:blur(6px)}
+.top-link:hover{opacity:0.9}
+.content{min-height:100vh;display:flex;align-items:center;justify-content:center}
+.card{max-width:760px;padding:36px;border-radius:12px;background:transparent;text-align:center}
+h1{margin:0 0 8px 0;font-size:1.6rem}
+.sub{color:#e6eef8;opacity:0.9}
+.emoji{margin-left:8px}
+/* Make the whole page use the gradient and center content */
+.App {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* Linear gradient top → bottom */
+  background: linear-gradient(
+    to bottom,
+    rgba(74, 222, 128, 0),
+    rgba(74, 222, 128, 1)
+  );
+}
+
+/* Center message style */
+.coming-soon-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1a1a1a;
+}

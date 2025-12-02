@@ -141,7 +141,16 @@ function App() {
           >
             Home
           </a>
-          <a className="top-link top-right" href="../../blogs-site/index.html">Blogs</a>
+          <a
+            className="top-link top-right"
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = 'http://localhost:3002/';
+            }}
+          >
+            Blogs
+          </a>
         </header>
 
         {/* Main content wrapper - no black card background */}
