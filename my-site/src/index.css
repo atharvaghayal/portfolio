@@ -13,14 +13,10 @@ code {
     monospace;
 }
 
-/* This is your #36454F charcoal background color */
-/* We put it here so it's the absolute base style */
+/* Base page background: use solid black to keep visuals consistent */
 body {
-  background: linear-gradient(180deg, #1c4164, #0f1a21 68%, #121212);
-  
-  /* Fallback for very old browsers */
-  background-color: #483D59; 
-  
-  /* Ensures the gradient covers the full page height */
+  background: #000000;
+  background-color: #000000;
+  /* Ensures the background covers the full page height */
   min-height: 100vh;
 }

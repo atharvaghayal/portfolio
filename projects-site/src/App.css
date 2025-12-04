@@ -11,8 +11,9 @@ html, body {
   font-family: 'Inter', sans-serif;
   /* Ensure the App container takes up at least the full viewport height */
   min-height: 100vh;
-  /* Applying the main dark gradient background for the page */
-  background: linear-gradient(180deg, #1c4164, #0f1a21 68%, #121212);
+  /* Applying a solid black background for the page */
+  background: #000000;
+  background-color: #000000;
 }
 
 /* Top navigation styles */

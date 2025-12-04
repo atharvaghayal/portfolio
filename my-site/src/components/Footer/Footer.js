@@ -26,16 +26,17 @@ const Footer = ({ onOpenModal }) => {
         
         {/* --- LEFT COLUMN --- */}
         <div className="footer-left">
-          <p className="footer-text">
-            Want to Collab!?
-          </p>
-          <p className="footer-text">
-            Feel free to reach out for collaborations or just a friendly hello !!
-          </p>
-          {/* 2. Changed from <a> to <button> and added onClick */}
-          <button onClick={onOpenModal} className="footer-note-btn">
-            Send a note
-          </button>
+          <p className="footer-heading">Want to Collab!?</p>
+
+          <div className="footer-contact-row">
+            <p className="footer-text">
+              Feel free to reach out for collaborations or just a friendly hello !!
+            </p>
+            {/* 2. Changed from <a> to <button> and added onClick */}
+            <button onClick={onOpenModal} className="footer-note-btn">
+              Send a note
+            </button>
+          </div>
         </div>
 
         {/* --- CENTER COLUMN --- */}
