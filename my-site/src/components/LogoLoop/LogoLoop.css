@@ -10,13 +10,12 @@
 }
 
 .logo-loop-section {
-  padding: 4rem 0;
-  /* Darker shade, blending with your #36454F background */
-  background-color: rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 0; /* reduced vertical padding */
+  background-color: transparent;
   overflow: hidden;
   position: relative;
   z-index: 2;
-  width: 100%;
+  width: 100vw; /* full viewport width so loop spans screen edges */
 }
 
 .logo-loop-title {
@@ -28,40 +27,29 @@
 }
 
 .logo-loop-container {
-  width: 100%;
+  width: 100vw; /* ensure container spans full viewport */
   overflow: hidden;
-  /* Adds a nice fade-out effect on the left and right edges */
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
+  /* allow logos to fully enter/exit the screen (no fade) */
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 .logo-loop-slider {
   display: flex;
-  /* 26 items (13 logos * 2) */
-  width: fit-content;
+  /* Make the slider at least twice the container width so duplicated logos travel fully across */
+  min-width: 200%;
+  width: auto;
   /* 40s duration, linear (constant speed), infinite loop */
   animation: scroll 40s linear infinite;
 }
 
 .logo-item {
   /* Set a fixed height for all logos */
-  height: 50px;
+  height: 56px; /* slightly larger for visibility */
   width: auto; /* Maintain aspect ratio */
 
-  /* Space between logos */
-  margin: 0 2rem; /* 2rem on left and right */
+  /* Space between logos - increase so they start outside the screen edges */
+  margin: 0 3rem; /* left and right */
 
   /* Visual styling: start as grayscale and semi-transparent */
   filter: grayscale(1);
