@@ -35,7 +35,7 @@ const items = [
   {
     image: "/collegeproject.webp",
     title: "Collge Major Mroject",
-    subtitle: "College major project",
+    subtitle: "Crop type Classification using multiple predefined LLM's",
     handle: "",
     borderColor: "#EC4899",
     gradient: "linear-gradient(170deg, #EC4899, #000)",
