@@ -4,11 +4,9 @@ import ChromaGrid from './components/ChromaGrid/ChromaGrid';
 import ClickSpark from './components/ClickSpark/ClickSpark';
 import Abstract3D from './components/Abstract3D';
 
-// Updated static data for 9 ChromaGrid items (3x3 layout)
-// These represent your projects and now maintain their full vertical size.
 const items = [
   {
-    image: "https://i.pravatar.cc/300?img=1",
+    image: "/solar.webp",
     title: "Solar Panel Potential Estimation : Training ML models",
     subtitle: "ML models to estimate solar panel potential",
     handle: "",
@@ -17,7 +15,7 @@ const items = [
     url: "https://github.com/atharvaghayal?tab=repositories"
   },
   {
-    image: "https://i.pravatar.cc/300?img=2",
+    image: "/tax.webp",
     title: "Tax-Sense Engine : 2025-26 regime Tax Calculator",
     subtitle: "Tax calculator for current tax regimes",
     handle: "",
@@ -26,7 +24,7 @@ const items = [
     url: "https://github.com/atharvaghayal?tab=repositories"
   },
   {
-    image: "https://i.pravatar.cc/300?img=3",
+    image: "invest.webp",
     title: "BudgetBot & capital analysis : College Mini project",
     subtitle: "College mini project for budgeting & investments",
     handle: "",
@@ -35,43 +33,7 @@ const items = [
     url: "https://github.com/atharvaghayal?tab=repositories"
   },
   {
-    image: "https://i.pravatar.cc/300?img=4",
-    title: "TubeNinja : Youtube video downloader web app.",
-    subtitle: "Web app to download YouTube videos",
-    handle: "",
-    borderColor: "#EF4444",
-    gradient: "linear-gradient(195deg, #EF4444, #000)",
-    url: "https://github.com/atharvaghayal?tab=repositories"
-  },
-  {
-    image: "https://i.pravatar.cc/300?img=5",
-    title: "Guess in the Dark : Blind wordle game",
-    subtitle: "Blind Wordle-style guessing game",
-    handle: "",
-    borderColor: "#8B5CF6",
-    gradient: "linear-gradient(225deg, #8B5CF6, #000)",
-    url: "https://github.com/atharvaghayal?tab=repositories"
-  },
-  {
-    image: "https://i.pravatar.cc/300?img=6",
-    title: "To-do list : using ElectronJS",
-    subtitle: "Desktop to-do list built with Electron",
-    handle: "",
-    borderColor: "#06B6D4",
-    gradient: "linear-gradient(135deg, #06B6D4, #000)",
-    url: "https://github.com/atharvaghayal?tab=repositories"
-  },
-  {
-    image: "https://i.pravatar.cc/300?img=7",
-    title: "My Learning Vault : My Handwritten notes materials.",
-    subtitle: "Collection of personal handwritten notes",
-    handle: "",
-    borderColor: "#F97316",
-    gradient: "linear-gradient(155deg, #F97316, #000)",
-    url: "https://github.com/atharvaghayal?tab=repositories"
-  },
-  {
-    image: "https://i.pravatar.cc/300?img=8",
+    image: "/collegeproject.webp",
     title: "Collge Major Mroject",
     subtitle: "College major project",
     handle: "",
@@ -80,12 +42,48 @@ const items = [
     url: "https://github.com/atharvaghayal?tab=repositories"
   },
   {
-    image: "https://i.pravatar.cc/300?img=9",
+    image: "/blindwordle.webp",
+    title: "Blind Wordle game",
+    subtitle: "Blind Wordle-style guessing game",
+    handle: "",
+    borderColor: "#8B5CF6",
+    gradient: "linear-gradient(225deg, #8B5CF6, #000)",
+    url: "https://github.com/atharvaghayal?tab=repositories"
+  },
+  {
+    image: "/f1.webp",
     title: "WDC Forecast Engine : F1 stats prediction page",
     subtitle: "F1 statistics prediction and visualization",
     handle: "",
     borderColor: "#34D399",
     gradient: "linear-gradient(200deg, #34D399, #000)",
+    url: "https://github.com/atharvaghayal?tab=repositories"
+  },
+  {
+    image: "/vault.webp",
+    title: "My Learning Vault : My Handwritten notes materials.",
+    subtitle: "Collection of personal handwritten notes",
+    handle: "",
+    borderColor: "#F97316",
+    gradient: "linear-gradient(155deg, #F97316, #000)",
+    url: "https://github.com/atharvaghayal?tab=repositories"
+  },
+  {
+    image: "/tubeninja.webp",
+    title: "TubeNinja : Youtube video downloader web app.",
+    subtitle: "Web app to download YouTube videos",
+    handle: "",
+    borderColor: "#EF4444",
+    gradient: "linear-gradient(195deg, #EF4444, #000)",
+    url: "https://github.com/atharvaghayal?tab=repositories"
+  },
+  {
+    image: "/todo.webp",
+    title: "Floating To-do list : Knowing one more JS framework 'ElectronJS' ",
+    subtitle: "Desktop to-do list built with Electron",
+    handle: "",
+    borderColor: "#06B6D4",
+    gradient: "linear-gradient(135deg, #06B6D4, #000)",
     url: "https://github.com/atharvaghayal?tab=repositories"
   }
 ];

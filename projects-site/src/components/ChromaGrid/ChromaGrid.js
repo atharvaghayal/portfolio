@@ -21,7 +21,7 @@ export const ChromaGrid = ({
 
   const demo = [
     {
-      image: 'https://i.pravatar.cc/300?img=8',
+      image: 'projects-site/src/assets/solar.jpg',
       title: 'Alex Rivera',
       subtitle: 'Full Stack Developer',
       handle: '@alexrivera',

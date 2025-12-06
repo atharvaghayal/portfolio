@@ -84,8 +84,8 @@ function TechCore() {
       <octahedronGeometry args={[1.2, 0]} />
       <MeshTransmissionMaterial
         backside
-        samples={16}
-        resolution={512}
+        samples={8}
+        resolution={128}
         transmission={0.9}
         roughness={0.15}
         thickness={1.2}
@@ -189,7 +189,7 @@ function CircuitRings() {
 // Floating Data Particles
 function DataParticles() {
   const particlesRef = useRef();
-  const particleCount = 100;
+  const particleCount = 75;
   const positions = new Float32Array(particleCount * 3);
   const colors = new Float32Array(particleCount * 3);
   
