@@ -153,59 +153,58 @@ function App() {
           <h3 className="hero-subtitle">
             <Typewriter words={words} typingSpeed={100} deletingSpeed={50} pauseTime={2000} />
           </h3>
-        </motion.div>
-
-        {/* Buttons positioned between hero-section and work-logo-wrapper */}
-        <motion.div 
-          className="hero-buttons-container"
-          initial="hidden"
-          animate="visible"
-          variants={{
-            visible: {
-              transition: { staggerChildren: 0.15, delayChildren: 0.3 }
-            }
-          }}
-        >
-          <motion.a 
-            href="/resume.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="hero-btn-rect"
+          
+          <motion.div 
+            className="hero-buttons-container"
+            initial="hidden"
+            animate="visible"
             variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+              visible: {
+                transition: { staggerChildren: 0.15, delayChildren: 0.3 }
+              }
             }}
           >
-            <FaFileAlt className="btn-icon" />
-            <span className="btn-text-default">Resume</span>
-            <span className="btn-text-hover">View</span>
-          </motion.a>
+            <motion.a 
+              href="/resume.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hero-btn-rect"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+              }}
+            >
+              <FaFileAlt className="btn-icon" />
+              <span className="btn-text-default">Resume</span>
+              <span className="btn-text-hover">View</span>
+            </motion.a>
 
-          <motion.a 
-            href="https://github.com/atharvaghayal" 
-            className="hero-btn-rect"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-            }}
-          >
-            <FaGithub className="btn-icon" />
-            <span className="btn-text-default">Github</span>
-            <span className="btn-text-hover">Follow</span>
-          </motion.a>
+            <motion.a 
+              href="https://github.com/atharvaghayal" 
+              className="hero-btn-rect"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+              }}
+            >
+              <FaGithub className="btn-icon" />
+              <span className="btn-text-default">Github</span>
+              <span className="btn-text-hover">Follow</span>
+            </motion.a>
 
-          <motion.a 
-            href="https://www.linkedin.com/in/atharva-ghayal" 
-            className="hero-btn-rect"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-            }}
-          >
-            <FaLinkedin className="btn-icon" />
-            <span className="btn-text-default">LinkedIn</span>
-            <span className="btn-text-hover">Connect</span>
-          </motion.a>
+            <motion.a 
+              href="https://www.linkedin.com/in/atharva-ghayal" 
+              className="hero-btn-rect"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+              }}
+            >
+              <FaLinkedin className="btn-icon" />
+              <span className="btn-text-default">LinkedIn</span>
+              <span className="btn-text-hover">Connect</span>
+            </motion.a>
+          </motion.div>
         </motion.div>
 
         <div className="work-logo-wrapper">
