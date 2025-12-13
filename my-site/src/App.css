@@ -79,18 +79,20 @@ ul {
   list-style: none;
 }
 
-/* --- Hero Section (Canvas Card) --- */
+/* --- Hero Section --- */
 .hero-section {
   position: relative;
   width: var(--container-desktop);
   max-width: var(--container-max);
-  margin: var(--section-padding) auto;
+  min-height: 100vh;
+  height: 100vh;
+  margin: 0 auto;
   padding: var(--card-padding) var(--card-padding) clamp(3rem, 5vw, 5rem) var(--card-padding);
-  background: rgba(30, 28, 40, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: clamp(1rem, 2vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 /* --- Header Inside Card --- */
@@ -99,12 +101,16 @@ ul {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 clamp(0.5rem, 2vw, 1rem);
-  margin-bottom: var(--gap-medium);
-  position: relative;
+  padding: clamp(1rem, 2vh, 2rem) clamp(0.5rem, 2vw, 1rem) 0 clamp(0.5rem, 2vw, 1rem);
+  margin-bottom: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 10;
   flex-wrap: wrap;
   gap: var(--gap-small);
+  flex-shrink: 0;
 }
 
 .card-tabs {
@@ -139,13 +145,15 @@ ul {
   position: relative;
   width: clamp(280px, 80%, 600px);
   height: clamp(200px, 40vw, 350px);
-  margin: var(--gap-large) auto;
+  margin: clamp(1rem, 2vh, var(--gap-large)) auto;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   border-radius: clamp(1rem, 2vw, 1.5rem);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+  align-self: center;
 }
 
 .hero-video {
@@ -179,29 +187,38 @@ ul {
   font-weight: 700;
   color: #fff;
   text-align: center;
-  margin-top: clamp(1.5rem, 3vw, 2.5rem);
-  margin-bottom: clamp(0.3rem, 1vw, 0.5rem);
+  margin-top: clamp(1rem, 2vh, 2.5rem);
+  margin-bottom: clamp(0.3rem, 1vh, 0.5rem);
   animation: fadeIn 0.8s ease;
   line-height: 1.2;
+  flex-shrink: 0;
+  width: 100%;
+  align-self: center;
 }
 
 .hero-subtitle {
   font-size: var(--font-size-hero-subtitle);
   font-weight: 400;
   color: rgba(255, 255, 255, 0.85);
-  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: clamp(1rem, 2vh, 2.5rem);
   min-height: 2.5em;
   text-align: center;
   line-height: 1.5;
+  flex-shrink: 0;
+  width: 100%;
+  align-self: center;
 }
 
-/* --- Action Buttons Container --- */
+/* --- Action Buttons Container (Outside Canvas Card) --- */
 .hero-buttons-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: var(--gap-medium);
-  margin-top: 0;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: clamp(3rem, 6vh, 5rem) auto;
+  padding: 0 var(--card-padding);
   position: relative;
   z-index: 10;
   flex-wrap: wrap;
@@ -268,7 +285,7 @@ ul {
   align-items: center;
   width: var(--container-desktop);
   max-width: var(--container-max);
-  margin: 0 auto var(--section-padding) auto;
+  margin: clamp(3rem, 6vh, 5rem) auto var(--section-padding) auto;
   padding: 0 var(--gap-small);
 }
 
@@ -426,11 +443,26 @@ ul {
   
   .hero-section {
     max-width: 1400px;
+    min-height: 100vh;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
   }
   
   .video-wrapper {
     max-width: 700px;
     height: 400px;
+    margin: clamp(1.5rem, 3vh, 2.5rem) auto;
+  }
+  
+  .hero-greeting {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .hero-subtitle {
+    text-align: center;
+    width: 100%;
   }
 }
 
@@ -438,39 +470,66 @@ ul {
 @media (min-width: 1440px) and (max-width: 1919px) {
   .hero-section {
     width: 90%;
+    min-height: 100vh;
+    height: 100vh;
   }
 }
 
 /* --- Standard Desktops & Laptops (1024px - 1439px) --- */
+/* Includes 1366x768 resolution */
 @media (min-width: 1024px) and (max-width: 1439px) {
   .hero-section {
     width: 90%;
     max-width: 1100px;
-    padding: 1.8rem 1.5rem 4rem 1.5rem;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0 1.5rem;
+    justify-content: center;
+    align-items: center;
   }
   
   .video-wrapper {
     width: 65%;
+    max-width: 600px;
     height: 320px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .hero-greeting {
     font-size: 2.2rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
   }
   
   .hero-subtitle {
     font-size: 1.1rem;
-    margin-bottom: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
   }
   
   .hero-buttons-container {
     gap: 1.2rem;
+    margin: clamp(2.5rem, 5vh, 4rem) auto;
   }
   
   .hero-btn-rect {
     min-width: 140px;
     height: 48px;
+  }
+  
+  .work-logo-wrapper {
+    margin-top: clamp(2.5rem, 5vh, 4rem);
   }
   
   .info-card {
@@ -482,11 +541,21 @@ ul {
 @media (max-width: 1023px) {
   .hero-section {
     width: var(--container-tablet);
+    min-height: 100vh;
+    height: 100vh;
   }
   
   .video-wrapper {
     width: 85%;
     height: clamp(250px, 35vw, 300px);
+  }
+  
+  .hero-buttons-container {
+    margin: clamp(2.5rem, 5vh, 4rem) auto;
+  }
+  
+  .work-logo-wrapper {
+    margin-top: clamp(2.5rem, 5vh, 4rem);
   }
   
   .cards-row {
@@ -502,19 +571,67 @@ ul {
   }
 }
 
+/* --- Specific fix for 1366x768 resolution --- */
+/* This must come after the general 1024-1439px query to override it */
+@media (min-width: 1360px) and (max-width: 1370px) {
+  .hero-section {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .video-wrapper {
+    width: 600px;
+    max-width: 600px;
+    height: 320px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
+  
+  .hero-greeting {
+    font-size: 2.2rem;
+    margin: 1.5rem auto 0.5rem auto;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    align-self: center;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    align-self: center;
+  }
+}
+
 /* --- Large Phones & Small Tablets (600px - 767px) --- */
 @media (max-width: 767px) {
   .hero-section {
     width: var(--container-mobile);
+    min-height: 100vh;
+    height: 100vh;
     padding: 1.5rem 1rem 3rem 1rem;
-    margin-top: 2rem;
+    margin: 0 auto;
   }
   
   .card-header {
     flex-direction: row;
     align-items: center;
     gap: 1rem;
-    padding: 0;
+    padding: clamp(1rem, 2vh, 2rem) clamp(0.5rem, 2vw, 1rem) 0 clamp(0.5rem, 2vw, 1rem);
     justify-content: center;
     flex-wrap: wrap;
   }
@@ -533,6 +650,7 @@ ul {
     flex-direction: column;
     width: 100%;
     gap: 1rem;
+    margin: clamp(2rem, 5vh, 3.5rem) auto;
   }
   
   .hero-btn-rect {
@@ -543,6 +661,7 @@ ul {
   
   .work-logo-wrapper {
     width: var(--container-mobile);
+    margin-top: clamp(2rem, 5vh, 3.5rem);
   }
 }
 
@@ -553,11 +672,11 @@ ul {
   }
   
   .hero-section {
+    min-height: 100vh;
     height: 100vh;
     width: 96%;
     padding: 3.5rem 0.8rem 1rem 0.8rem;
     margin: 0 auto;
-    border-radius: 0;
   }
   
   .card-header {
@@ -622,6 +741,7 @@ ul {
   }
   
   .hero-section {
+    min-height: 100vh;
     height: 100vh;
     width: 98%;
     padding: 3.5rem 0.6rem 1rem 0.6rem;
@@ -655,7 +775,9 @@ ul {
 /* --- Landscape Mode (Phones) --- */
 @media (max-height: 500px) and (orientation: landscape) {
   .hero-section {
-    margin: 1rem auto;
+    min-height: 100vh;
+    height: 100vh;
+    margin: 0 auto;
     padding: 1rem;
   }
   
@@ -677,11 +799,16 @@ ul {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.8rem;
+    margin: clamp(1.5rem, 4vh, 2.5rem) auto;
   }
   
   .hero-btn-rect {
     flex: 0 1 auto;
     min-width: 120px;
+  }
+  
+  .work-logo-wrapper {
+    margin-top: clamp(1.5rem, 4vh, 2.5rem);
   }
 }
 
@@ -692,6 +819,8 @@ ul {
   and (-webkit-min-device-pixel-ratio: 2) {
   .hero-section {
     width: 90%;
+    min-height: 100vh;
+    height: 100vh;
   }
   
   .video-wrapper {
