@@ -43,8 +43,8 @@ const items = [
   },
   {
     image: "/blindwordle.webp",
-    title: "Blind Wordle game",
-    subtitle: "Blind Wordle-style guessing game",
+    title: "Quickle Word Game",
+    subtitle: "Quickle - style guessing game",
     handle: "",
     borderColor: "#8B5CF6",
     gradient: "linear-gradient(225deg, #8B5CF6, #000)",
