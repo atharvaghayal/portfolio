@@ -16,6 +16,9 @@ import powerbi from '../../assets/powerbi.png';
 import python from '../../assets/python.png';
 import react from '../../assets/react.png';
 import vscode from '../../assets/vscode.png';
+import mysql from '../../assets/mysql.png';
+import canva from '../../assets/canva.png';
+import notion from '../../assets/notion.png';
 
 // Create an array of logo objects (image and alt text)
 const logos = [
@@ -33,6 +36,9 @@ const logos = [
   { src: github, alt: 'GitHub' },
   { src: figma, alt: 'Figma' },
   { src: vscode, alt: 'VS Code' },
+  { src: mysql, alt: 'MySQL' },
+  { src: canva, alt: 'Canva' },
+  { src: notion, alt: 'Notion' }
 ];
 
 function LogoLoop() {
