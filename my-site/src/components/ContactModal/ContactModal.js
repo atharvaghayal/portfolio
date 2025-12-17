@@ -12,18 +12,6 @@ const ContactModal = ({ onClose }) => {
     e.preventDefault();
     setStatus('sending');
 
-    // --- PASTE YOUR KEYS FROM EMAILJS HERE ---
-    //
-    // 1. Go to your EmailJS Account > Email Services > (Your Service)
-    const SERVICE_ID = 'service_r7il5fq'; 
-    //
-    // 2. Go to Email Templates > (Your Template)
-    const TEMPLATE_ID = 'template_b0i701z';
-    //
-    // 3. Go to Account > API Keys
-    const PUBLIC_KEY = '0vc8wsGYQP3jdWK9N';
-    // -------------------------------------------
-
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
       .then((result) => {
           console.log(result.text);
