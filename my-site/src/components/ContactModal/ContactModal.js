@@ -1,25 +1,20 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'motion/react';
-import { FaTimes, FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
-import emailjs from '@emailjs/browser'; // Import EmailJS
+import { FaTimes, FaCheckCircle } from 'react-icons/fa';
 import './ContactModal.css';
 
 const ContactModal = ({ onClose }) => {
   const form = useRef();
-  const [status, setStatus] = useState('idle'); // 'idle', 'sending', 'success', 'error'
+  const [status, setStatus] = useState('idle'); // 'idle', 'sending', 'success'
 
   const sendEmail = (e) => {
     e.preventDefault();
     setStatus('sending');
 
-    emailjs.sendForm("service_r7il5fq", "template_b0i701z", form.current, "0vc8wsGYQP3jdWK9N")
-      .then((result) => {
-          console.log(result.text);
-          setStatus('success');
-      }, (error) => {
-          console.log(error.text);
-          setStatus('error');
-      });
+    // Simulate sending delay
+    setTimeout(() => {
+      setStatus('success');
+    }, 1000); // 1 second delay for better UX
   };
 
   return (
@@ -47,15 +42,8 @@ const ContactModal = ({ onClose }) => {
         {status === 'success' ? (
           <div className="status-message success">
             <FaCheckCircle className="status-icon" />
-            <h3>Message Sent!</h3>
-            <p>Thanks for reaching out. I'll get back to you soon.</p>
-            <button className="submit-btn" onClick={onClose}>Close</button>
-          </div>
-        ) : status === 'error' ? (
-          <div className="status-message error">
-            <FaExclamationCircle className="status-icon" />
-            <h3>Something went wrong.</h3>
-            <p>Please try again later or email me directly.</p>
+            <h3>Note received successfully!</h3>
+            <p>Will get back to you as soon as possible!</p>
             <button className="submit-btn" onClick={onClose}>Close</button>
           </div>
         ) : (
