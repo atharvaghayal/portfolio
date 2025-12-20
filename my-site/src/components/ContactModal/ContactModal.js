@@ -12,7 +12,7 @@ const ContactModal = ({ onClose }) => {
     e.preventDefault();
     setStatus('sending');
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+    emailjs.sendForm("service_r7il5fq", "template_b0i701z", form.current, "0vc8wsGYQP3jdWK9N")
       .then((result) => {
           console.log(result.text);
           setStatus('success');
