@@ -15,8 +15,9 @@ import Abstract3D from './components/Abstract3D'; // <-- ADD THIS IMPORT
 function App() {
   const words = [
     "Engineering Student",
-    "Aspiring Data Analyst",
     "Developer",
+    "Aspiring Data Analyst",
+    "Freelancer",
     "Chess Player"
   ];
   
