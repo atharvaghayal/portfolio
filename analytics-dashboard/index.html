@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Analytics Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="threejs-background"></div>
+
+    <header>
+        <h1>Personal Analytics Dashboard</h1>
+        <p>Showcasing Technical Expertise and Learning Progress</p>
+    </header>
+
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Skills</h3>
+                    <span id="total-skills">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Average Proficiency</h3>
+                    <span id="avg-proficiency">0%</span>
+                </div>
+                <div class="stat-card">
+                    <h3>High Proficiency Skills</h3>
+                    <span id="improving-skills">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Latest Update</h3>
+                    <span id="latest-update">N/A</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="skill-breakdown">
+            <h2>Skill Proficiency</h2>
+            <div id="circular-charts" class="circular-charts-grid">
+                <!-- Circular charts will be generated here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+
+    <div id="tooltip" class="tooltip"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/abstract3d.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
