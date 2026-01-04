@@ -79,7 +79,7 @@ const items = [
   },
   {
     image: "/todo.webp",
-    title: "Floating To-do list : Knowing one more JS framework 'ElectronJS'cmd ",
+    title: "Floating To-do list : Knowing one more JS framework 'ElectronJS'",
     subtitle: "Desktop to-do list built with Electron",
     handle: "",
     borderColor: "#06B6D4",
