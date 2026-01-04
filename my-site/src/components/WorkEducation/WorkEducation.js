@@ -14,11 +14,12 @@ const workData = [
   {
     id: 1,
     title: "Sedna Technologies",
-    role: "Python developer(Intern)",
+    role: "Developer(Intern)",
     date: "Jan 2026-Present",
     background: 'linear-gradient(to right, #ffffff, #7F00FF)',
     logo: sednaLogo
   },
+
   {
     id: 2,
     title: "Deloitte Data analytics virtual Internship Program",
