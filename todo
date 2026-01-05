@@ -9,3 +9,5 @@ link each project to respective github repo!!
 BLOGS PAGE:
 list out Blogs topics!!
 New Blog every Month!!
+
+cd "c:\Users\1\portfolio\analytics-dashboard" ; http-server -p 4000

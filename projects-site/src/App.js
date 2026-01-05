@@ -21,7 +21,7 @@ const items = [
     handle: "",
     borderColor: "#10B981",
     gradient: "linear-gradient(180deg, #10B981, #000)",
-    url: "https://github.com/atharvaghayal?tab=repositories"
+    url: "https://github.com/atharvaghayal/Tax-Calc-by-Atharva-Ghayal"
   },
   {
     image: "invest.webp",
@@ -30,7 +30,7 @@ const items = [
     handle: "",
     borderColor: "#F59E0B",
     gradient: "linear-gradient(165deg, #F59E0B, #000)",
-    url: "https://github.com/atharvaghayal?tab=repositories"
+    url: "https://github.com/atharvaghayal/Sem-6-mini-project."
   },
   {
     image: "/collegeproject.webp",
