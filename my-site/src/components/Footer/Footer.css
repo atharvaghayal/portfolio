@@ -167,6 +167,36 @@
   }
 }
 
+@media (max-width: 768px) {
+  .footer-card {
+    max-height: 20vh; /* Limit to 20% on tablets and smaller */
+    padding: 0.8rem 0.8rem 0 0.8rem; /* Reduced padding for tablets */
+  }
+  .footer-grid {
+    gap: 1rem; /* Smaller gap on tablets */
+  }
+  .count-up-text {
+    font-size: 1.2rem; /* Smaller on tablets */
+  }
+  .footer-heading {
+    font-size: 0.95rem; /* Slightly smaller heading */
+  }
+  .footer-text {
+    font-size: 0.85rem; /* Slightly smaller text */
+  }
+  .footer-socials a {
+    font-size: 1.2rem; /* Smaller social icons */
+  }
+  .footer-note-btn {
+    padding: 0.35rem 0.7rem; /* Smaller button */
+    font-size: 0.85rem; /* Smaller button text */
+  }
+  .footer-copyright {
+    padding: 0.8rem 0 0.8rem 0; /* Reduced copyright padding */
+    font-size: 0.8rem; /* Smaller copyright text */
+  }
+}
+
 @media (max-width: 600px) {
   .footer-card {
     padding: 2rem 1rem 0 1rem; /* No bottom padding on mobile card */
@@ -174,5 +204,52 @@
   }
   .footer-copyright {
      padding: 2rem 0 1.5rem 0; /* Same padding on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-card {
+    padding: 0.3rem 0.3rem 0 0.3rem; /* Ultra minimal padding */
+    margin: 0 auto 0.3rem auto; /* Minimal bottom margin */
+    height: 20vh; /* Fixed height to 20% of viewport */
+    min-height: 20vh; /* Ensure minimum height */
+  }
+  .footer-grid {
+    gap: 0.4rem; /* Very minimal gap between sections */
+  }
+  .footer-center {
+    gap: 0.2rem; /* Minimal center gap */
+  }
+  .footer-right {
+    gap: 0.2rem; /* Minimal right gap */
+  }
+  .views-counter {
+    gap: 0.05rem; /* Tiny gap in counter */
+  }
+  .count-up-text {
+    font-size: 0.9rem; /* Very small count-up text */
+  }
+  .footer-heading {
+    font-size: 0.8rem; /* Smaller heading */
+    margin-bottom: 0.1rem; /* Reduce margin */
+  }
+  .footer-text {
+    font-size: 0.7rem; /* Smaller text */
+    line-height: 1.1; /* Tighter line height */
+  }
+  .footer-socials {
+    gap: 0.5rem; /* Smaller gap between social icons */
+  }
+  .footer-socials a {
+    font-size: 0.9rem; /* Smaller social icons */
+  }
+  .footer-note-btn {
+    padding: 0.2rem 0.4rem; /* Tiny button padding */
+    font-size: 0.7rem; /* Smaller button text */
+  }
+  .footer-copyright {
+    padding: 0.2rem 0 0.2rem 0; /* Tiny copyright padding */
+    margin-top: 0.2rem; /* Tiny top margin */
+    font-size: 0.65rem; /* Very small copyright text */
   }
 }
