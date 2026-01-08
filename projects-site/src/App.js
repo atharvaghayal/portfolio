@@ -6,33 +6,6 @@ import Abstract3D from './components/Abstract3D';
 
 const items = [
   {
-    image: "/solar.webp",
-    title: "Solar Panel Potential Estimation : Training ML models",
-    subtitle: "ML models to estimate solar panel potential",
-    handle: "",
-    borderColor: "#3B82F6",
-    gradient: "linear-gradient(145deg, #3B82F6, #000)",
-    url: "https://github.com/atharvaghayal?tab=repositories"
-  },
-  {
-    image: "/tax.webp",
-    title: "Tax-Sense Engine : 2025-26 regime Tax Calculator",
-    subtitle: "Tax calculator for current tax regimes",
-    handle: "",
-    borderColor: "#10B981",
-    gradient: "linear-gradient(180deg, #10B981, #000)",
-    url: "https://github.com/atharvaghayal/Tax-Calc-by-Atharva-Ghayal"
-  },
-  {
-    image: "invest.webp",
-    title: "BudgetBot & capital analysis : College Mini project",
-    subtitle: "College mini project for budgeting & investments",
-    handle: "",
-    borderColor: "#F59E0B",
-    gradient: "linear-gradient(165deg, #F59E0B, #000)",
-    url: "https://github.com/atharvaghayal/Sem-6-mini-project."
-  },
-  {
     image: "/collegeproject.webp",
     title: "Collge Major Mroject",
     subtitle: "Crop type Classification using multiple predefined LLM's",
@@ -58,6 +31,33 @@ const items = [
     borderColor: "#34D399",
     gradient: "linear-gradient(200deg, #34D399, #000)",
     url: "https://github.com/atharvaghayal?tab=repositories"
+  },
+  {
+    image: "/solar.webp",
+    title: "Solar Panel Potential Estimation : Training ML models",
+    subtitle: "ML models to estimate solar panel potential",
+    handle: "",
+    borderColor: "#3B82F6",
+    gradient: "linear-gradient(145deg, #3B82F6, #000)",
+    url: "https://github.com/atharvaghayal?tab=repositories"
+  },
+  {
+    image: "/tax.webp",
+    title: "Tax-Sense Engine : 2025-26 regime Tax Calculator",
+    subtitle: "Tax calculator for current tax regimes",
+    handle: "",
+    borderColor: "#10B981",
+    gradient: "linear-gradient(180deg, #10B981, #000)",
+    url: "https://github.com/atharvaghayal/Tax-Calc-by-Atharva-Ghayal"
+  },
+  {
+    image: "invest.webp",
+    title: "BudgetBot & capital analysis : College Mini project",
+    subtitle: "College mini project for budgeting & investments",
+    handle: "",
+    borderColor: "#F59E0B",
+    gradient: "linear-gradient(165deg, #F59E0B, #000)",
+    url: "https://github.com/atharvaghayal/Sem-6-mini-project."
   },
   {
     image: "/vault.webp",
