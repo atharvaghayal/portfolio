@@ -131,7 +131,7 @@ function App() {
         <header className="top-nav" style={{ position: 'relative', zIndex: 3 }}>
           <a
             className="top-link top-left"
-            href="#home"
+            href="#Home"
             onClick={(e) => {
               e.preventDefault();
               window.location.href = 'http://localhost:3000/';
@@ -141,10 +141,10 @@ function App() {
           </a>
           <a
             className="top-link top-right"
-            href="#"
+            href="#Blogs"
             onClick={(e) => {
               e.preventDefault();
-              window.location.href = 'http://localhost:3002/';
+              window.location.href = "http://localhost:3002/";
             }}
           >
             Blogs
