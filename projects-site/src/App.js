@@ -21,7 +21,7 @@ const items = [
     handle: "",
     borderColor: "#8B5CF6",
     gradient: "linear-gradient(225deg, #8B5CF6, #000)",
-    url: "https://github.com/atharvaghayal?tab=repositories"
+    url: "https://github.com/atharvaghayal/quickle"
   },
   {
     image: "/f1.webp",
@@ -30,7 +30,7 @@ const items = [
     handle: "",
     borderColor: "#34D399",
     gradient: "linear-gradient(200deg, #34D399, #000)",
-    url: "https://github.com/atharvaghayal?tab=repositories"
+    url: "https://github.com/atharvaghayal/WDC-Forecast-Engine"
   },
   {
     image: "/solar.webp",
@@ -66,7 +66,7 @@ const items = [
     handle: "",
     borderColor: "#F97316",
     gradient: "linear-gradient(155deg, #F97316, #000)",
-    url: "https://github.com/atharvaghayal?tab=repositories"
+    url: "https://github.com/atharvaghayal/Notes-Web-Application"
   },
   {
     image: "/tubeninja.webp",
