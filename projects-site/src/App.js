@@ -15,7 +15,7 @@ const items = [
     url: "https://github.com/atharvaghayal?tab=repositories"
   },
   {
-    image: "/blindwordle.webp",
+    image: "/quickle.webp",
     title: "Quickle Word Game",
     subtitle: "Quickle - style guessing game",
     handle: "",
@@ -84,7 +84,7 @@ const items = [
     handle: "",
     borderColor: "#06B6D4",
     gradient: "linear-gradient(135deg, #06B6D4, #000)",
-    url: "https://github.com/atharvaghayal?tab=repositories"
+    url: "https://github.com/atharvaghayal/Floating-To-do-list"
   }
 ];
 

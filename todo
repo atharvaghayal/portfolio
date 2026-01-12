@@ -2,14 +2,14 @@ HOME PAGE:
 connect portfolio views to google analytics dashboard.
 add "Skills Dashboard"button besides projects button.
 update resume
-fix footer for mobile sized devices
+fix footer for mobile sized devices(Iphone SE,Surface Duo)
 
 PROJECTS PAGE:
-complete all projects
+complete all projects(Major, quickle, WDC, Solar, Tax, Investment, Learning vault, X)
 link each project to respective github repo!!
 
 BLOGS PAGE:
-list out Blogs topics!!
+list out Blogs topics!!(2026 poetry, trip blog, College Journey, Trip to Kalsubai, College Placement, Projects, Do's and Dont's before Joining College)
 New Blog every Month!!
 
 cd "c:\Users\1\portfolio\analytics-dashboard" ; http-server -p 4000
