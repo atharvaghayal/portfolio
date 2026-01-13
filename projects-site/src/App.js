@@ -85,6 +85,15 @@ const items = [
     borderColor: "#06B6D4",
     gradient: "linear-gradient(135deg, #06B6D4, #000)",
     url: "https://github.com/atharvaghayal/Floating-To-do-list"
+  },
+  {
+    image: "/todo.webp",
+    title: "COVID-Public-Health-Data-Analysis",
+    subtitle: "Analysis of Data of Spreading ofvirus with respect to effect!",
+    handle: "",
+    borderColor: "#8B0000",
+    gradient: "linear-gradient(135deg, #808080, #8B0000)",
+    url: "https://github.com/atharvaghayal/Floating-To-do-list"
   }
 ];
 
