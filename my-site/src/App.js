@@ -99,6 +99,17 @@ function App() {
             <ul className="card-tabs">
               <li>
                 <a
+                  href="#Skills Dashboard"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = 'http://localhost:4000/';
+                  }}
+                >
+                  Skills DashBoard
+                </a>
+              </li>
+              <li>
+                <a
                   href="#projects"
                   onClick={(e) => {
                     e.preventDefault();
@@ -110,7 +121,7 @@ function App() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#Blogs"
                   onClick={(e) => {
                     e.preventDefault();
                     window.location.href = 'http://localhost:3002/';

@@ -1,24 +1,62 @@
 /* --- Glassmorphism Footer Card --- */
 .footer-card {
-  width: 100%;
-  max-width: 1200px;
-  background: rgba(30, 28, 40, 0.7); 
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 2rem;
-  
-  /* --- THIS IS THE FIX --- */
-  /* This centers the card on the page */
-  margin: 0 auto 1.5rem auto; /* Top, Left/Right, Bottom (reduced) */
+  width: var(--container-desktop);
+  max-width: var(--container-max);
+  margin: 0 auto clamp(2rem, 5vh, 4rem) auto;
+  padding: 0 var(--gap-small);
+  box-sizing: border-box;
+}
 
-  /* Reduced vertical padding to make the footer box shorter */
-  padding: 1rem 2rem 0 2rem; 
-  
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  overflow: hidden; 
+.footer-content {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--card-padding);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(10px);
+  gap: var(--gap-medium);
+}
+
+@media (max-width: 1023px) {
+  .footer-card {
+    width: var(--container-tablet);
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-card {
+    width: var(--container-mobile);
+  }
+
+  .footer-content {
+    flex-direction: column; /* Stack elements vertically */
+    text-align: center;
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .footer-links {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .footer-content {
+    padding: 1.2rem 0.8rem;
+  }
+  
+  .footer-text {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .footer-btn {
+    width: 100%; /* Make action buttons full width for better touch targets */
+    justify-content: center;
+  }
 }
 
 /* --- 3-Column Grid Layout --- */
