@@ -1,6 +1,5 @@
 HOME PAGE:
 logo loop in single flow, not stuck and start from 1st icon again.
-fix view count from +2 to +1.
 connect site to google analytics dashboard for total view count.(After deployment)
 update resume(after sedna)
 

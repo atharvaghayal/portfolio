@@ -4,18 +4,18 @@
     transform: translateX(0);
   }
   100% {
-    /* Moves the slider left by 50% of its total width (since it's duplicated) */
+    /* Exact mathematical halfway point */
     transform: translateX(-50%);
   }
 }
 
 .logo-loop-section {
-  padding: 2.5rem 0; /* reduced vertical padding */
+  padding: 2.5rem 0;
   background-color: transparent;
   overflow: hidden;
   position: relative;
   z-index: 2;
-  width: 100vw; /* full viewport width so loop spans screen edges */
+  width: 100%; /* Changed from 100vw to 100% to avoid scrollbar issues */
 }
 
 .logo-loop-title {
@@ -27,60 +27,55 @@
 }
 
 .logo-loop-container {
-  width: 100vw; /* ensure container spans full viewport */
+  width: 100%;
+  display: flex;
   overflow: hidden;
-  /* allow logos to fully enter/exit the screen (no fade) */
-  -webkit-mask-image: none;
-  mask-image: none;
+  /* Optional: adds a soft fade at the edges so logos don't just 'pop' in */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .logo-loop-slider {
   display: flex;
-  /* Make the slider at least twice the container width so duplicated logos travel fully across */
-  min-width: 200%;
-  width: auto;
-  /* 40s duration, linear (constant speed), infinite loop */
-  animation: scroll 40s linear infinite;
+  /* width: max-content is CRITICAL for the -50% calculation to work */
+  width: max-content; 
+  flex-shrink: 0;
+  /* Use gap instead of margins for perfect spacing */
+  gap: 6rem; 
+  padding: 0 3rem; /* Small initial offset */
+  animation: scroll 30s linear infinite;
 }
 
 .logo-item {
-  /* Set a fixed height for all logos */
-  height: 56px; /* slightly larger for visibility */
-  width: auto; /* Maintain aspect ratio */
-
-  /* Space between logos - increase so they start outside the screen edges */
-  margin: 0 3rem; /* left and right */
-
-  /* Visual styling: start as grayscale and semi-transparent */
+  height: 56px;
+  width: auto;
+  flex-shrink: 0; /* Prevents images from squishing */
   filter: grayscale(1);
   opacity: 0.6;
-
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-/* On hover, bring logo to full color and opacity */
 .logo-item:hover {
   filter: grayscale(0);
   opacity: 1;
   transform: scale(1.1);
 }
 
-/* Pause the animation when hovering over the container */
+/* Pause the animation when hovering */
 .logo-loop-container:hover .logo-loop-slider {
   animation-play-state: paused;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .logo-loop-slider {
+    gap: 3rem;
+    animation-duration: 20s;
+  }
   .logo-item {
     height: 40px;
-    margin: 0 1.5rem;
   }
   .logo-loop-title {
     font-size: 1.25rem;
-  }
-  /* Speed up animation slightly on mobile since less is visible */
-  .logo-loop-slider {
-    animation-duration: 30s;
   }
 }
