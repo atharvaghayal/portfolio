@@ -69,13 +69,13 @@ const items = [
     url: "https://github.com/atharvaghayal/Notes-Web-Application"
   },
   {
-    image: "/tubeninja.webp",
-    title: "TubeNinja : Youtube video downloader web app.",
-    subtitle: "Web app to download YouTube videos",
+    image: "/todo.webp",
+    title: "COVID-Public-Health-Data-Analysis",
+    subtitle: "Analysis of Data of Spreading ofvirus with respect to effect!",
     handle: "",
-    borderColor: "#EF4444",
-    gradient: "linear-gradient(195deg, #EF4444, #000)",
-    url: "https://github.com/atharvaghayal?tab=repositories"
+    borderColor: "#8B0000",
+    gradient: "linear-gradient(135deg, #808080, #8B0000)",
+    url: "https://github.com/atharvaghayal/Floating-To-do-list"
   },
   {
     image: "/todo.webp",
@@ -84,15 +84,6 @@ const items = [
     handle: "",
     borderColor: "#06B6D4",
     gradient: "linear-gradient(135deg, #06B6D4, #000)",
-    url: "https://github.com/atharvaghayal/Floating-To-do-list"
-  },
-  {
-    image: "/todo.webp",
-    title: "COVID-Public-Health-Data-Analysis",
-    subtitle: "Analysis of Data of Spreading ofvirus with respect to effect!",
-    handle: "",
-    borderColor: "#8B0000",
-    gradient: "linear-gradient(135deg, #808080, #8B0000)",
     url: "https://github.com/atharvaghayal/Floating-To-do-list"
   }
 ];
