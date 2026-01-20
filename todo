@@ -1,14 +1,13 @@
 HOME PAGE:
-logo loop in single flow, not stuck and start from 1st icon again.
-connect site to google analytics dashboard for total view count.(After deployment)
+connect site to google analytics dashboard.(After deployment)
 update resume(after sedna)
 
 PROJECTS PAGE:
-complete all projects(Major, quickle, WDC, Solar, Tax, Investment, Learning vault, X)
+complete all projects(Major, quickle, WDC, Solar, Tax, Investment, Learning vault, covid)
 link each project to respective github repo!!
 
 BLOGS PAGE:
-list out Blogs topics!!(2026 poetry, trip blog, College Journey, Trip to Kalsubai, College Placement, Projects, Do's and Dont's before Joining College)
+list out Blogs topics!!
 New Blog every Month!!
 
 cd "c:\Users\1\portfolio\analytics-dashboard" ; http-server -p 4000
