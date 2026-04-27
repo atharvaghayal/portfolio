@@ -15,7 +15,7 @@ const workData = [
     id: 1,
     title: "Sedna Technologies",
     role: "Developer(Intern)",
-    date: "Jan 2026-Present",
+    date: "Jan 2026 - Apr 2026",
     background: 'linear-gradient(to right, #ffffff, #7F00FF)',
     logo: sednaLogo
   },
