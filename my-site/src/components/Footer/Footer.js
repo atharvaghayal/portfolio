@@ -69,11 +69,6 @@ const Footer = ({ onOpenModal }) => {
         </div>
       </div>
       
-      {/* --- COPYRIGHT --- */}
-      <div className="footer-copyright">
-        © 2026 Atharva Ghayal | <a href="http://localhost:4000" target="_blank" rel="noopener noreferrer">Built with ❤️ by Atharva Ghayal</a>
-      </div>
-      
     </div>
   );
 };
