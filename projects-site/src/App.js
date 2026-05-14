@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import ChromaGrid from './components/ChromaGrid/ChromaGrid';
 import ClickSpark from './components/ClickSpark/ClickSpark';
-import Abstract3D from './components/Abstract3D';
 
 const items = [
   {
@@ -105,30 +104,13 @@ function App() {
         className="App"
         style={{
           minHeight: '100vh',
-          background: 'transparent',
+          background: '#000',
           position: 'relative',
           zIndex: 1
         }}
       >
-        {/* 3D Background Layer */}
-        <div 
-          className="abstract-3d-background"
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            zIndex: 0,
-            pointerEvents: 'none',
-            opacity: 1
-          }}
-        >
-          <Abstract3D />
-        </div>
-
         {/* Top navigation: Home (left) and Blogs (right) */}
-        <header className="top-nav" style={{ position: 'relative', zIndex: 3 }}>
+        <header className="top-nav">
           <a
             className="top-link top-left"
             href="#Home"
@@ -138,6 +120,16 @@ function App() {
             }}
           >
             Home
+          </a>
+          <a
+            className="top-link"
+            href="#Projects"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = 'http://localhost:3001/';
+            }}
+          >
+            Projects
           </a>
           <a
             className="top-link top-right"
@@ -158,10 +150,6 @@ function App() {
           {/* First 6 cards */}
           <ChromaGrid 
             items={firstSixItems}
-            radius={300}
-            damping={0.45}
-            fadeOut={0.6} 
-            ease="power3.out"
           />
 
           {/* "Other Projects" divider */}
@@ -170,10 +158,6 @@ function App() {
           {/* Remaining 3 cards */}
           <ChromaGrid 
             items={remainingItems}
-            radius={300}
-            damping={0.45}
-            fadeOut={0.6}
-            ease="power3.out"
           />
         </div>
       </div>

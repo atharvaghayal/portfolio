@@ -2,8 +2,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  /* Set a solid dark color to ensure no browser default white background shows through */
-  background-color: #121212; 
+  background: #000;
+  background-color: #000;
 }
 
 .App {
@@ -18,19 +18,23 @@ html, body {
 
 /* Top navigation styles */
 .top-nav {
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
   pointer-events: auto;
-  z-index: 60;
+  z-index: 1000;
   padding: 18px 20px;
-  background: transparent;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.72), transparent);
 }
 .top-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   /* Make the box clearly visible by default */
   background: rgba(255,255,255,0.06);
@@ -42,6 +46,17 @@ html, body {
   border: 1px solid rgba(255,255,255,0.08);
   box-shadow: 0 8px 22px rgba(0,0,0,0.45);
 }
+
+@media (max-width: 480px) {
+  .top-nav {
+    padding: 14px 12px;
+  }
+
+  .top-link {
+    padding: 7px 9px;
+    font-size: 0.85rem;
+  }
+}
 .top-link:hover {
   background: rgba(255,255,255,0.12);
   transform: translateY(-2px);
@@ -52,7 +67,7 @@ html, body {
 .content-wrapper {
   width: 90%;
   max-width: 1200px;
-  margin: 40px auto 100px auto;
+  margin: 80px auto 100px auto;
   position: relative;
   padding: 0;
 }

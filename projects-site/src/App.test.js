@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders projects page navigation and heading', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: /home/i })).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: /projects/i })).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: /blogs/i })).toBeInTheDocument();
+  expect(screen.getByText(/want to be part of my projects/i)).toBeInTheDocument();
 });

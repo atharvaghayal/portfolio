@@ -22,7 +22,7 @@ const workData = [
 
   {
     id: 2,
-    title: "Deloitte Data analytics virtual Internship Program",
+    title: "Deloitte Data Analytics Virtual Internship Program",
     role: "Certification",
     date: "July 2025",
     background: 'linear-gradient(to right, #009639, #00A9E0, #003B5C, #66B032)',
