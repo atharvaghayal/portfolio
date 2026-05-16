@@ -46,8 +46,8 @@ function LogoLoop() {
   const allLogos = [...logos, ...logos];
 
   return (
-    <section className="logo-loop-section">
-      <h3 className="logo-loop-title">Languages and tools I use :</h3>
+    <section className="logo-loop-section" aria-labelledby="logo-loop-heading">
+      <h2 id="logo-loop-heading" className="section-heading logo-loop-title">Languages and tools I use</h2>
       <div className="logo-loop-container">
         <div className="logo-loop-slider">
           {allLogos.map((logo, index) => (
@@ -56,6 +56,8 @@ function LogoLoop() {
               src={logo.src}
               alt={logo.alt}
               className="logo-item"
+              loading="lazy"
+              decoding="async"
             />
           ))}
         </div>

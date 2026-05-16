@@ -5,9 +5,8 @@ import './components/Footer/Footer.css';
 import LogoLoop from './components/LogoLoop/LogoLoop';
 import WorkEducation from './components/WorkEducation/WorkEducation';
 import ClickSpark from './components/ClickSpark/ClickSpark';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import Footer from './components/Footer/Footer';
-import ContactModal from './components/ContactModal/ContactModal';
 
 const terminalPromptPrefix = ">";
 const terminalPromptText = "Hi, I am Atharva Ghayal!";
@@ -141,8 +140,6 @@ function App() {
     };
   }, [heroInView]);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
     <ClickSpark 
       sparkColor='#fff' 
@@ -155,9 +152,10 @@ function App() {
         className="App"
         style={{ '--elastic-offset': `${elasticOffset}px` }}
       >
-        <motion.div 
-          ref={heroRef}
-          className="hero-section"
+        <main className="AppMain">
+          <motion.header 
+            ref={heroRef}
+            className="hero-section"
           initial={{ opacity: 0, y: 30 }}
           animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={
@@ -282,7 +280,7 @@ function App() {
               </motion.a>
             </motion.div>
           </div>
-        </motion.div>
+        </motion.header>
 
         <div className="work-logo-wrapper">
           <WorkEducation />
@@ -290,12 +288,9 @@ function App() {
         </div>
 
         <div className="footer-card">
-          <Footer onOpenModal={() => setIsModalOpen(true)} />
+          <Footer />
         </div>
-
-        <AnimatePresence>
-          {isModalOpen && <ContactModal onClose={() => setIsModalOpen(false)} />}
-        </AnimatePresence>
+        </main>
       </div>
     </ClickSpark> 
   );

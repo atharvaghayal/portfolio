@@ -3,8 +3,7 @@ import { FaEnvelope, FaLinkedin, FaGithub, FaFileAlt } from 'react-icons/fa';
 import CountUp from '../CountUp';
 import './Footer.css';
 
-// 1. Accept the 'onOpenModal' prop from App.js
-const Footer = ({ onOpenModal }) => {
+const Footer = () => {
   const [viewCount, setViewCount] = useState(0);
 
   useEffect(() => {
@@ -21,7 +20,7 @@ const Footer = ({ onOpenModal }) => {
 
   return (
     // This wrapper holds the 3-column grid and the copyright
-    <div className="footer-content-wrapper">
+    <footer className="footer-content-wrapper">
       <div className="footer-grid">
         
         {/* --- LEFT COLUMN --- */}
@@ -32,10 +31,6 @@ const Footer = ({ onOpenModal }) => {
             <p className="footer-text">
               Feel free to reach out for collaborations or just a friendly hello !!
             </p>
-            {/* 2. Changed from <a> to <button> and added onClick */}
-            <button onClick={onOpenModal} className="footer-note-btn">
-              Send a note
-            </button>
           </div>
         </div>
 
@@ -69,7 +64,7 @@ const Footer = ({ onOpenModal }) => {
         </div>
       </div>
       
-    </div>
+    </footer>
   );
 };
 

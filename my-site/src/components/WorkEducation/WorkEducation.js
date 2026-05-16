@@ -58,8 +58,8 @@ const WorkEducation = () => {
   const [activeTab, setActiveTab] = useState('work'); 
 
   return (
-    <section className="work-edu-section">
-      
+    <section className="work-edu-section" aria-labelledby="work-education-heading">
+
       {/* --- Toggle Switch --- */}
       <div className="toggle-container">
         <button 
@@ -97,7 +97,7 @@ const WorkEducation = () => {
                   }}
                 >
                   {/* --- 2. USE THE IMAGE TAG --- */}
-                  <img src={item.logo} alt={`${item.title} logo`} className="card-logo" />
+                  <img src={item.logo} alt={`${item.title} logo`} className="card-logo" loading="lazy" decoding="async" />
                   
                   <div className="card-details">
                     <h3 className="card-title">{item.title}</h3>
@@ -125,7 +125,7 @@ const WorkEducation = () => {
                   }}
                 >
                   {/* --- 3. USE THE IMAGE TAG --- */}
-                  <img src={item.logo} alt={`${item.title} logo`} className="card-logo" />
+                  <img src={item.logo} alt={`${item.title} logo`} className="card-logo" loading="lazy" decoding="async" />
 
                   <div className="card-details">
                     <h3 className="card-title">{item.title}</h3>
