@@ -137,7 +137,9 @@ ul {
   left: 50%;
   right: auto;
   z-index: 1000;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translate3d(0, var(--elastic-offset), 0);
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
   flex-wrap: wrap;
   gap: var(--gap-small);
   flex-shrink: 0;

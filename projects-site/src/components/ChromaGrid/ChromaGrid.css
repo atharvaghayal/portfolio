@@ -54,6 +54,20 @@
   box-shadow: 0 30px 60px rgba(0,0,0,0.55);
 }
 
+.blank-canvas-card {
+  min-height: 320px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+}
+
+.blank-canvas-card:hover {
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+.blank-canvas-surface {
+  min-height: 320px;
+  width: 100%;
+}
+
 .chroma-img-wrapper {
   position: relative;
   z-index: 1;

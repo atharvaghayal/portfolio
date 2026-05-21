@@ -22,7 +22,7 @@ export const ChromaGrid = ({
       {items.map((c, i) => (
         <article
           key={i}
-          className="chroma-card"
+          className={`chroma-card ${c.isBlankCanvas ? 'blank-canvas-card' : ''}`}
           onClick={() => handleCardClick(c.url)}
           style={{
             '--card-border': c.borderColor || 'transparent',
@@ -30,30 +30,36 @@ export const ChromaGrid = ({
             cursor: c.url ? 'pointer' : 'default'
           }}
         >
-          <div className="chroma-img-wrapper">
-            <img src={c.image} alt={c.title} loading="lazy" />
-          </div>
-          <footer className="chroma-info">
-            <h3 className="name">{c.title}</h3>
-            {c.handle && <span className="handle">{c.handle}</span>}
-            <p className="role">{c.subtitle}</p>
-            {c.location && <span className="location">{c.location}</span>}
-          </footer>
-          <a
-            className={`chroma-external-link ${c.url ? '' : 'disabled'}`}
-            href={c.url || '#'}
-            target={c.url ? '_blank' : undefined}
-            rel={c.url ? 'noopener noreferrer' : undefined}
-            onClick={(e) => {
-              e.stopPropagation();
-              if (!c.url) e.preventDefault();
-            }}
-            aria-label={c.url ? `Open ${c.title} in new tab` : `${c.title} link not available`}
-            aria-disabled={!c.url}
-            tabIndex={c.url ? 0 : -1}
-          >
-            <img src={externalIcon} alt="" width="16" height="16" aria-hidden="true" />
-          </a>
+          {c.isBlankCanvas ? (
+            <div className="blank-canvas-surface" aria-label={c.title} />
+          ) : (
+            <>
+              <div className="chroma-img-wrapper">
+                <img src={c.image} alt={c.title} loading="lazy" />
+              </div>
+              <footer className="chroma-info">
+                <h3 className="name">{c.title}</h3>
+                {c.handle && <span className="handle">{c.handle}</span>}
+                <p className="role">{c.subtitle}</p>
+                {c.location && <span className="location">{c.location}</span>}
+              </footer>
+              <a
+                className={`chroma-external-link ${c.url ? '' : 'disabled'}`}
+                href={c.url || '#'}
+                target={c.url ? '_blank' : undefined}
+                rel={c.url ? 'noopener noreferrer' : undefined}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (!c.url) e.preventDefault();
+                }}
+                aria-label={c.url ? `Open ${c.title} in new tab` : `${c.title} link not available`}
+                aria-disabled={!c.url}
+                tabIndex={c.url ? 0 : -1}
+              >
+                <img src={externalIcon} alt="" width="16" height="16" aria-hidden="true" />
+              </a>
+            </>
+          )}
         </article>
       ))}
     </div>

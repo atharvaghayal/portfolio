@@ -1,0 +1,47 @@
+Projects page summary for projects-site
+
+Section: Want to be part of my projects?
+- Advanced Splitwise app
+- HydraSync: AI-driven hydration companion
+- Solar Panel Potential Estimation : Training ML models
+- WDC Forecast Engine : F1 stats prediction page
+- Tax-Sense Engine : 2025-26 regime Tax Calculator
+- BudgetBot & capital analysis : College Mini project
+
+Section: Case Studies
+- Tax-Sense Engine : 2025-26 regime Tax Calculator
+- Floating To-do list : Knowing one more JS framework 'ElectronJS'
+- Weather API App
+
+Section: Labs / R&D
+- HydraSync: AI-driven hydration companion
+- Advanced Splitwise app
+- WDC Forecast Engine : F1 stats prediction page
+- COVID-Public-Health-Data-Analysis
+
+Section: College Group Projects
+- Solar Panel Potential Estimation : Training ML models
+- BudgetBot & capital analysis : College Mini project
+- SBL Bookstore Frontend
+- Highschool Library Master
+
+Section: Additional Work :
+- Quickle Word Game
+- Floating To-do list : Knowing one more JS framework 'ElectronJS'
+- COVID-Public-Health-Data-Analysis
+- My Learning Vault : My Handwritten notes materials.
+
+Project counts by section membership:
+- Advanced Splitwise app: 2 sections
+- HydraSync: AI-driven hydration companion: 2 sections
+- WDC Forecast Engine : F1 stats prediction page: 2 sections
+- Tax-Sense Engine : 2025-26 regime Tax Calculator: 2 sections
+- BudgetBot & capital analysis : College Mini project: 2 sections
+- Solar Panel Potential Estimation : Training ML models: 2 sections
+- SBL Bookstore Frontend: 1 section
+- Highschool Library Master: 1 section
+- Floating To-do list : Knowing one more JS framework 'ElectronJS': 2 sections
+- Weather API App: 1 section
+- COVID-Public-Health-Data-Analysis: 2 sections
+- Quickle Word Game: 1 section
+- My Learning Vault : My Handwritten notes materials.: 1 section

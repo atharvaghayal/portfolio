@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import ChromaGrid from './components/ChromaGrid/ChromaGrid';
 import ClickSpark from './components/ClickSpark/ClickSpark';
 
+const maxElasticOffset = 12;
+const elasticReleaseDelay = 120;
+
 const items = [
   {
     image: "/collegeproject.webp",
-    title: "Collge Major Mroject",
-    subtitle: "Crop type Classification using multiple predefined LLM's",
+    title: "Advanced Splitwise app",
+    subtitle: "Smart group expense tracking with seamless settlement and shared budgets",
     handle: "",
     borderColor: "#EC4899",
     gradient: "linear-gradient(170deg, #EC4899, #000)",
     url: "https://github.com/atharvaghayal?tab=repositories"
+  },
+  {
+    image: "/vault.webp",
+    title: "HydraSync: AI-driven hydration companion",
+    subtitle: "Hourly water intake tracking with sensor-backed hardware and LLM-powered wellness insights",
+    handle: "",
+    borderColor: "#38BDF8",
+    gradient: "linear-gradient(145deg, #38BDF8, #000)",
+    url: ""
   },
   {
     image: "/quickle.webp",
@@ -87,10 +99,132 @@ const items = [
   }
 ];
 
+const createBlankCanvasCards = (sectionName) =>
+  Array.from({ length: 3 }, (_, index) => ({
+    title: `${sectionName} blank canvas ${index + 1}`,
+    isBlankCanvas: true,
+    borderColor: "#555",
+    gradient: "linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02))"
+  }));
+
 function App() {
-  // Split items into first 6 and remaining 3
-  const firstSixItems = items.slice(0, 6);
-  const remainingItems = items.slice(6);
+  // Split items into the first section without Quickle, then remaining items
+  const firstSectionItems = [
+    ...items.slice(0, 2),
+    items[4],
+    ...items.slice(3, 4),
+    ...items.slice(5, 7)
+  ];
+  const remainingItems = [items[2], items[9], items[8], items[7]];
+  const projectSections = [
+    {
+      title: "Want to be part of my projects?",
+      items: firstSectionItems
+    },
+    {
+      title: "Case Studies",
+      items: [
+        { ...items[5] },
+        { ...items[9] },
+        {
+          title: "Weather API App",
+          subtitle: "Live forecast insights with hourly weather tracking and predictive alerts",
+          handle: "",
+          borderColor: "#3B82F6",
+          gradient: "linear-gradient(145deg, #3B82F6, #000)",
+          url: ""
+        }
+      ]
+    },
+    {
+      title: "Labs / R&D",
+      items: [items[1], items[0], items[3], items[8]]
+    },
+    {
+      title: "College Group Projects",
+      items: [
+        items[4],
+        { ...items[6] },
+        {
+          title: "SBL Bookstore Frontend",
+          subtitle: "HTML/CSS/JS bookstore experience with catalog browsing and responsive checkout design",
+          handle: "",
+          borderColor: "#F472B6",
+          gradient: "linear-gradient(145deg, #F472B6, #000)",
+          url: ""
+        },
+        {
+          title: "Highschool Library Master",
+          subtitle: "Smart book tracking and student borrowing management for campus libraries",
+          handle: "",
+          borderColor: "#FBBF24",
+          gradient: "linear-gradient(145deg, #FBBF24, #000)",
+          url: ""
+        }
+      ]
+    },
+    {
+      title: "Additional Work :",
+      items: remainingItems
+    }
+  ];
+
+  const [elasticOffset, setElasticOffset] = useState(0);
+  const elasticReleaseTimeout = useRef(null);
+  const touchStartY = useRef(null);
+
+  useEffect(() => {
+    const releaseElastic = () => {
+      window.clearTimeout(elasticReleaseTimeout.current);
+      elasticReleaseTimeout.current = window.setTimeout(() => {
+        setElasticOffset(0);
+      }, elasticReleaseDelay);
+    };
+
+    const applyElastic = (deltaY) => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+      const maxScrollTop = Math.max(
+        0,
+        document.documentElement.scrollHeight - window.innerHeight
+      );
+      const isAtTop = scrollTop <= 0;
+      const isAtBottom = scrollTop >= maxScrollTop - 1;
+
+      if (isAtTop && deltaY < 0) {
+        setElasticOffset(maxElasticOffset);
+        releaseElastic();
+      } else if (isAtBottom && deltaY > 0) {
+        setElasticOffset(-maxElasticOffset);
+        releaseElastic();
+      }
+    };
+
+    const onWheel = (event) => applyElastic(event.deltaY);
+    const onTouchStart = (event) => {
+      touchStartY.current = event.touches[0]?.clientY ?? null;
+    };
+    const onTouchMove = (event) => {
+      if (touchStartY.current === null) return;
+      const currentY = event.touches[0]?.clientY ?? touchStartY.current;
+      applyElastic(touchStartY.current - currentY);
+    };
+    const onScroll = () => {
+      setElasticOffset(0);
+    };
+
+    window.addEventListener('wheel', onWheel, { passive: true });
+    window.addEventListener('touchstart', onTouchStart, { passive: true });
+    window.addEventListener('touchmove', onTouchMove, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => {
+      window.clearTimeout(elasticReleaseTimeout.current);
+      window.removeEventListener('wheel', onWheel);
+      window.removeEventListener('touchstart', onTouchStart);
+      window.removeEventListener('touchmove', onTouchMove);
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
 
   return (
     <ClickSpark
@@ -106,14 +240,15 @@ function App() {
           minHeight: '100vh',
           background: '#000',
           position: 'relative',
-          zIndex: 1
+          zIndex: 1,
+          '--elastic-offset': `${elasticOffset}px`
         }}
       >
-        {/* Top navigation: Home (left) and Blogs (right) */}
-        <header className="top-nav">
-          <a
-            className="top-link top-left"
-            href="#Home"
+        {/* Navigation Header */}
+        <div className="card-header">
+          <a 
+            href="/" 
+            className="home-link"
             onClick={(e) => {
               e.preventDefault();
               window.location.href = 'http://localhost:3000/';
@@ -121,44 +256,29 @@ function App() {
           >
             Home
           </a>
-          <a
-            className="top-link"
-            href="#Projects"
-            onClick={(e) => {
-              e.preventDefault();
-              window.location.href = 'http://localhost:3001/';
-            }}
-          >
-            Projects
-          </a>
-          <a
-            className="top-link top-right"
-            href="#Blogs"
-            onClick={(e) => {
-              e.preventDefault();
-              window.location.href = "http://localhost:3002/";
-            }}
-          >
-            Blogs
-          </a>
-        </header>
+          <ul className="card-tabs">
+            <li>
+              <a
+                href="#Blogs"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = 'http://localhost:3002/';
+                }}
+              >
+                Blogs
+              </a>
+            </li>
+          </ul>
+        </div>
 
         {/* Main content wrapper - no black card background */}
         <div className="content-wrapper" style={{ position: 'relative', zIndex: 2 }}>
-          <h2 className="projects-invite">Want to be part of my projects?</h2>
-          
-          {/* First 6 cards */}
-          <ChromaGrid 
-            items={firstSixItems}
-          />
-
-          {/* "Other Projects" divider */}
-          <h2 className="projects-invite">Additional Work :</h2>
-
-          {/* Remaining 3 cards */}
-          <ChromaGrid 
-            items={remainingItems}
-          />
+          {projectSections.map((section) => (
+            <section className="project-section" key={section.title}>
+              <h2 className="projects-invite">{section.title}</h2>
+              <ChromaGrid items={section.items} />
+            </section>
+          ))}
         </div>
       </div>
     </ClickSpark>
