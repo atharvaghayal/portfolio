@@ -8,13 +8,14 @@ import sednaLogo from '../../assets/sedna-logo.png';
 import deloitteLogo from '../../assets/deloitte-logo.png';
 import awsLogo from '../../assets/aws-logo.png';
 import raitLogo from '../../assets/rait-logo.png';
+import mesLogo from '../../assets/mes-logo.png';
 
 // --- Work Data (with new 'logo' property) ---
 const workData = [
   {
     id: 1,
     title: "Sedna Technologies",
-    role: "Developer(Intern)",
+    role: "Developer Intern",
     date: "Jan 2026 - Apr 2026",
     background: 'linear-gradient(to right, #ffffff, #7F00FF)',
     logo: sednaLogo
@@ -31,7 +32,7 @@ const workData = [
   {
     id: 3,
     title: "AWS Academy Graduate",
-    role: "Machine Learning Foundations (Certification)",
+    role: "Machine Learning Foundations Certification",
     date: "April 2025",
     background: 'linear-gradient(to right, #FF9900, #232F3E, #A7A7A7)',
     logo: awsLogo
@@ -47,6 +48,14 @@ const educationData = [
     date: "June 2022 - June 2026",
     background: 'linear-gradient(to right, #8A033E, #7B0000, #1A1A1A, #FFFFFF)',
     logo: raitLogo
+  },
+  {
+    id: 2,
+    title: "Higher Secondary School Certificate",
+    institution: "MES Academics & Sports",
+    date: "June 2020 - May 2022",
+    background: 'linear-gradient(to right, #F7EA00 15%, #4D0000 45%, #3A0000 75%, #120000 100%)',
+    logo: mesLogo
   }
 ];
 

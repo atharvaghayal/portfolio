@@ -48,7 +48,7 @@ const Footer = () => {
         <div className="footer-right">
           <p className="footer-text">Where to find me?</p>
           <div className="footer-socials">
-            <a href="mailto:atharva160504@gmail.com" aria-label="Email">
+            <a href="mailto: atharva160504@gmail.com" aria-label="Email">
               <FaEnvelope />
             </a>
             <a href="https://www.linkedin.com/in/atharva-ghayal" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
