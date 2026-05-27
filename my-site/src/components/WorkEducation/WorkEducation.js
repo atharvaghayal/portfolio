@@ -51,7 +51,7 @@ const educationData = [
   },
   {
     id: 2,
-    title: "Higher Secondary School Certificate",
+    title: "Higher Secondary School",
     institution: "MES Academics & Sports",
     date: "June 2020 - May 2022",
     background: 'linear-gradient(to right, #F7EA00 15%, #4D0000 45%, #3A0000 75%, #120000 100%)',
