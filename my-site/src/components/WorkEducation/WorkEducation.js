@@ -62,7 +62,6 @@ const educationData = [
 // --- Dark Overlay Style ---
 const darkOverlay = 'linear-gradient(rgba(21, 21, 21, 0.6), rgba(21, 21, 21, 0.6))';
 
-
 const WorkEducation = () => {
   const [activeTab, setActiveTab] = useState('work'); 
 
