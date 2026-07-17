@@ -1,14 +1,12 @@
 import React from 'react';
 import './LogoLoop.css';
 
-// Import all 13 of your logos from the assets folder
 import css from '../../assets/css.png';
 import figma from '../../assets/figma.png';
 import git from '../../assets/git.png';
 import github from '../../assets/github.png';
 import html from '../../assets/html.png';
-// FIX: Renamed the import from 'java.' to 'javaL'
-import javaL from '../../assets/java.png';
+import javaLogo from '../../assets/java.png';
 import js from '../../assets/js.png';
 import jupyter from '../../assets/jupyter.png';
 import msexcel from '../../assets/msexcel.png';
@@ -20,15 +18,13 @@ import mysql from '../../assets/mysql.png';
 import canva from '../../assets/canva.png';
 import notion from '../../assets/notion.png';
 
-// Create an array of logo objects (image and alt text)
 const logos = [
   { src: html, alt: 'HTML5' },
   { src: css, alt: 'CSS3' },
   { src: js, alt: 'JavaScript' },
   { src: react, alt: 'React' },
   { src: python, alt: 'Python' },
-  // FIX: Updated the src to use the new 'javaL' variable
-  { src: javaL, alt: 'Java' },
+  { src: javaLogo, alt: 'Java' },
   { src: jupyter, alt: 'Jupyter' },
   { src: powerbi, alt: 'Power BI' },
   { src: msexcel, alt: 'MS Excel' },
@@ -42,7 +38,6 @@ const logos = [
 ];
 
 function LogoLoop() {
-  // Duplicate the logos array for a seamless loop
   const allLogos = [...logos, ...logos];
 
   return (

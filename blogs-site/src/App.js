@@ -5,11 +5,13 @@ const maxElasticOffset = 12;
 const elasticReleaseDelay = 120;
 
 function App() {
+  // Elastic boundaries scrolling effect variables
   const [elasticOffset, setElasticOffset] = useState(0);
   const elasticReleaseTimeout = useRef(null);
   const touchStartY = useRef(null);
 
   useEffect(() => {
+    // Reset boundary pull offset after a delay
     const releaseElastic = () => {
       window.clearTimeout(elasticReleaseTimeout.current);
       elasticReleaseTimeout.current = window.setTimeout(() => {
@@ -17,6 +19,7 @@ function App() {
       }, elasticReleaseDelay);
     };
 
+    // Calculate boundary limits and apply elastic offset
     const applyElastic = (deltaY) => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
       const maxScrollTop = Math.max(

@@ -1,19 +1,13 @@
-/* Global Reset and Dark Background */
 html, body {
   margin: 0;
   padding: 0;
-  background: #000;
   background-color: #000;
 }
 
 .App {
-  /* Use Inter font for a clean, modern look */
   font-family: 'Inter', sans-serif;
-  /* Ensure the App container takes up at least the full viewport height */
   min-height: 100vh;
-  /* Applying a solid black background for the page */
-  background: #000000;
-  background-color: #000000;
+  background-color: #000;
   --elastic-offset: 0px;
 }
 
@@ -62,7 +56,6 @@ ul {
   left: 50%;
   right: auto;
   z-index: 1000;
-  transform: translateX(-50%);
   flex-wrap: wrap;
   gap: var(--gap-small);
   flex-shrink: 0;
@@ -105,13 +98,13 @@ ul {
   outline-offset: 3px;
 }
 
-/* Main content wrapper - adjust for new navbar */
+/* Main content wrapper */
 .content-wrapper {
   width: 90%;
   max-width: 1200px;
   margin: 80px auto 100px auto;
   position: relative;
-  padding: 0;
+  padding: 20px 0 0 0;
   transform: translate3d(0, var(--elastic-offset), 0);
   transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
@@ -131,14 +124,8 @@ ul {
   z-index: 5;
 }
 
-/* Ensure enough space between the title and the grid so they never overlap */
 .chroma-grid {
   margin-top: 6px;
-}
-
-/* Add extra gap between the navbar and the content */
-.content-wrapper {
-  padding-top: 20px;
 }
 
 @media (max-width: 480px) {

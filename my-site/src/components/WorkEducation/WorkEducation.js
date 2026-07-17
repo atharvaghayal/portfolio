@@ -2,15 +2,12 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import './WorkEducation.css';
 
-// --- 1. IMPORT YOUR LOGOS ---
-// (Make sure the paths and filenames are correct)
 import sednaLogo from '../../assets/sedna-logo.png';
 import deloitteLogo from '../../assets/deloitte-logo.png';
 import awsLogo from '../../assets/aws-logo.png';
 import raitLogo from '../../assets/rait-logo.png';
 import mesLogo from '../../assets/mes-logo.png';
 
-// --- Work Data (with new 'logo' property) ---
 const workData = [
   {
     id: 1,
@@ -20,7 +17,6 @@ const workData = [
     background: 'linear-gradient(to right, #ffffff, #7F00FF)',
     logo: sednaLogo
   },
-
   {
     id: 2,
     title: "Deloitte Data Analytics Virtual Internship Program",
@@ -39,7 +35,6 @@ const workData = [
   }
 ];
 
-// --- Education Data (with new 'logo' property) ---
 const educationData = [
   {
     id: 1,
@@ -59,7 +54,6 @@ const educationData = [
   }
 ];
 
-// --- Dark Overlay Style ---
 const darkOverlay = 'linear-gradient(rgba(21, 21, 21, 0.6), rgba(21, 21, 21, 0.6))';
 
 const WorkEducation = () => {
@@ -67,8 +61,6 @@ const WorkEducation = () => {
 
   return (
     <section className="work-edu-section" aria-labelledby="work-education-heading">
-
-      {/* --- Toggle Switch --- */}
       <div className="toggle-container">
         <button 
           className={`toggle-btn ${activeTab === 'work' ? 'active' : ''}`}
@@ -84,7 +76,6 @@ const WorkEducation = () => {
         </button>
       </div>
 
-      {/* --- Content Area --- */}
       <div className="content-wrapper">
         <AnimatePresence mode='wait'>
           {activeTab === 'work' ? (
@@ -104,7 +95,6 @@ const WorkEducation = () => {
                     backgroundImage: `${darkOverlay}, ${item.background}`
                   }}
                 >
-                  {/* --- 2. USE THE IMAGE TAG --- */}
                   <img src={item.logo} alt={`${item.title} logo`} className="card-logo" loading="lazy" decoding="async" />
                   
                   <div className="card-details">
@@ -132,7 +122,6 @@ const WorkEducation = () => {
                     backgroundImage: `${darkOverlay}, ${item.background}`
                   }}
                 >
-                  {/* --- 3. USE THE IMAGE TAG --- */}
                   <img src={item.logo} alt={`${item.title} logo`} className="card-logo" loading="lazy" decoding="async" />
 
                   <div className="card-details">

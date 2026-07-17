@@ -98,17 +98,7 @@ const items = [
     url: "https://github.com/atharvaghayal/Floating-To-do-list"
   }
 ];
-
-const createBlankCanvasCards = (sectionName) =>
-  Array.from({ length: 3 }, (_, index) => ({
-    title: `${sectionName} blank canvas ${index + 1}`,
-    isBlankCanvas: true,
-    borderColor: "#555",
-    gradient: "linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02))"
-  }));
-
 function App() {
-  // Split items into the first section without Quickle, then remaining items
   const firstSectionItems = [
     ...items.slice(0, 2),
     items[4],
@@ -244,7 +234,6 @@ function App() {
           '--elastic-offset': `${elasticOffset}px`
         }}
       >
-        {/* Navigation Header */}
         <div className="card-header">
           <a 
             href="/" 
@@ -271,7 +260,6 @@ function App() {
           </ul>
         </div>
 
-        {/* Main content wrapper - no black card background */}
         <div className="content-wrapper" style={{ position: 'relative', zIndex: 2 }}>
           {projectSections.map((section) => (
             <section className="project-section" key={section.title}>
