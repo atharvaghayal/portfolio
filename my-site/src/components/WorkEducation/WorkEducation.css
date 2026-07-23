@@ -1,7 +1,7 @@
 .work-edu-section {
   width: 100%;
-  padding: 4rem 2rem;
-  max-width: 1200px;
+  padding: 3rem 1.5rem;
+  max-width: 1120px;
   margin: 0 auto;
   color: #fff;
 }
@@ -12,11 +12,12 @@
   background: rgba(255, 255, 255, 0.05);
   padding: 0.4rem;
   border-radius: 0.8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .toggle-btn {
+  position: relative;
   background: transparent;
   border: none;
   color: rgba(255, 255, 255, 0.6);
@@ -25,10 +26,28 @@
   font-weight: 600;
   border-radius: 0.6rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  z-index: 1;
+}
+
+.toggle-btn-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toggle-indicator {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.6rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 0;
 }
 
 .toggle-btn:hover {
@@ -37,9 +56,7 @@
 
 /* Active State */
 .toggle-btn.active {
-  background: rgba(255, 255, 255, 0.1);
   color: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Cards Layout --- */
@@ -52,38 +69,60 @@
 
 /* --- Individual Card --- */
 .info-card {
+  position: relative;
   flex: 1; 
-  min-width: 300px;
+  min-width: 320px;
   background: #151515;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 1.5rem;
+  padding: 1.2rem;
   border-radius: 1rem;
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  gap: 1rem;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.3s ease;
   overflow: hidden; 
   background-size: cover;
   background-position: center;
 }
 
-/* Sets specific width for B.Tech card */
-.info-card.wide {
-  flex: 0 1 450px;
-  min-width: auto; 
+/* Shine sweep effect on hover */
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.04),
+    transparent
+  );
+  transform: rotate(25deg);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.info-card:hover::before {
+  left: 125%;
 }
 
 .info-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 12px 40px rgba(0,0,0,0.4),
+    0 0 30px rgba(99, 102, 241, 0.06);
 }
 
 /* --- Logo Image Style --- */
 .card-logo {
-  width: 60px;
-  height: 60px;
-  border-radius: 12px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
   flex-shrink: 0;
   /* Ensures logo fits without stretching */
   object-fit: cover; 
@@ -99,22 +138,22 @@
 }
 
 .card-title {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6); 
 }
 
 .card-role {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
 }
 
 .card-date {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.7);
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
 }

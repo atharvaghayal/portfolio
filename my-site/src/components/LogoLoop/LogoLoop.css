@@ -3,6 +3,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     /* Exact mathematical halfway point */
     transform: translateX(-50%);
@@ -10,20 +11,25 @@
 }
 
 .logo-loop-section {
-  padding: 2.5rem 0;
+  padding: 1.5rem 0;
   background-color: transparent;
   overflow: hidden;
   position: relative;
   z-index: 2;
-  width: 100%; /* Changed from 100vw to 100% to avoid scrollbar issues */
+  width: 100vw;
+  max-width: 100%;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .logo-loop-title {
-  font-size: 1.5rem;
+  font-size: 0.85rem;
   font-weight: 600;
   text-align: center;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 2.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
 }
 
 .logo-loop-container {
@@ -37,18 +43,20 @@
 .logo-loop-slider {
   display: flex;
   /* width: max-content is CRITICAL for the -50% calculation to work */
-  width: max-content; 
+  width: max-content;
   flex-shrink: 0;
   /* Use gap instead of margins for perfect spacing */
-  gap: 6rem; 
-  padding: 0 3rem; /* Small initial offset */
+  gap: 4rem;
+  padding: 0 2rem;
+  /* Small initial offset */
   animation: scroll 30s linear infinite;
 }
 
 .logo-item {
-  height: 56px;
+  height: 44px;
   width: auto;
-  flex-shrink: 0; /* Prevents images from squishing */
+  flex-shrink: 0;
+  /* Prevents images from squishing */
   filter: grayscale(1);
   opacity: 0.6;
   transition: all 0.3s ease;
@@ -56,9 +64,9 @@
 }
 
 .logo-item:hover {
-  filter: grayscale(0);
+  filter: grayscale(0) drop-shadow(0 0 8px currentColor);
   opacity: 1;
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 /* Pause the animation when hovering */
@@ -72,10 +80,8 @@
     gap: 3rem;
     animation-duration: 20s;
   }
+
   .logo-item {
     height: 40px;
-  }
-  .logo-loop-title {
-    font-size: 1.25rem;
   }
 }

@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './App.css';
-import ChromaGrid from './components/ChromaGrid/ChromaGrid';
-import ClickSpark from './components/ClickSpark/ClickSpark';
+import { motion, AnimatePresence } from 'framer-motion';
+import ChromaGrid from '../components/ChromaGrid/ChromaGrid';
+import AnimatedPage from '../components/Layout/AnimatedPage';
+import ProjectModal from '../components/ProjectModal/ProjectModal';
+import './Projects.css';
 
 const maxElasticOffset = 12;
 const elasticReleaseDelay = 120;
@@ -11,7 +13,7 @@ const items = [
     image: "/collegeproject.webp",
     title: "Advanced Splitwise app",
     subtitle: "Smart group expense tracking with seamless settlement and shared budgets",
-    handle: "",
+    category: "Web",
     borderColor: "#EC4899",
     gradient: "linear-gradient(170deg, #EC4899, #000)",
     url: "https://github.com/atharvaghayal?tab=repositories"
@@ -20,7 +22,7 @@ const items = [
     image: "/vault.webp",
     title: "HydraSync: AI-driven hydration companion",
     subtitle: "Hourly water intake tracking with sensor-backed hardware and LLM-powered wellness insights",
-    handle: "",
+    category: "Other",
     borderColor: "#38BDF8",
     gradient: "linear-gradient(145deg, #38BDF8, #000)",
     url: ""
@@ -29,52 +31,52 @@ const items = [
     image: "/quickle.webp",
     title: "Quickle Word Game",
     subtitle: "Quickle - style guessing game",
-    handle: "",
+    category: "Web",
     borderColor: "#8B5CF6",
     gradient: "linear-gradient(225deg, #8B5CF6, #000)",
     url: "https://github.com/atharvaghayal/quickle"
   },
   {
     image: "/f1.webp",
-    title: "WDC Forecast Engine : F1 stats prediction page",
+    title: "WDC Forecast Engine",
     subtitle: "F1 statistics prediction and visualization",
-    handle: "",
+    category: "Data",
     borderColor: "#34D399",
     gradient: "linear-gradient(200deg, #34D399, #000)",
     url: "https://github.com/atharvaghayal/WDC-Forecast-Engine"
   },
   {
     image: "/solar.webp",
-    title: "Solar Panel Potential Estimation : Training ML models",
+    title: "Solar Panel Potential Estimation",
     subtitle: "ML models to estimate solar panel potential",
-    handle: "",
+    category: "AI/ML",
     borderColor: "#3B82F6",
     gradient: "linear-gradient(145deg, #3B82F6, #000)",
     url: "https://github.com/atharvaghayal?tab=repositories"
   },
   {
     image: "/tax.webp",
-    title: "Tax-Sense Engine : 2025-26 regime Tax Calculator",
+    title: "Tax-Sense Engine",
     subtitle: "Tax calculator for current tax regimes",
-    handle: "",
+    category: "Web",
     borderColor: "#10B981",
     gradient: "linear-gradient(180deg, #10B981, #000)",
     url: "https://github.com/atharvaghayal/Tax-Calc-by-Atharva-Ghayal"
   },
   {
     image: "invest.webp",
-    title: "BudgetBot & capital analysis : College Mini project",
+    title: "BudgetBot & capital analysis",
     subtitle: "College mini project for budgeting & investments",
-    handle: "",
+    category: "Web",
     borderColor: "#F59E0B",
     gradient: "linear-gradient(165deg, #F59E0B, #000)",
     url: "https://github.com/atharvaghayal/Sem-6-mini-project."
   },
   {
     image: "/vault.webp",
-    title: "My Learning Vault : My Handwritten notes materials.",
+    title: "My Learning Vault",
     subtitle: "Collection of personal handwritten notes",
-    handle: "",
+    category: "Web",
     borderColor: "#F97316",
     gradient: "linear-gradient(155deg, #F97316, #000)",
     url: "https://github.com/atharvaghayal/Notes-Web-Application"
@@ -83,85 +85,58 @@ const items = [
     image: "/todo.webp",
     title: "COVID-Public-Health-Data-Analysis",
     subtitle: "Analysis of Data of Spreading of virus with respect to effect!",
-    handle: "",
+    category: "Data",
     borderColor: "#8B0000",
     gradient: "linear-gradient(135deg, #808080, #8B0000)",
     url: "https://github.com/atharvaghayal/Floating-To-do-list"
   },
   {
     image: "/todo.webp",
-    title: "Floating To-do list : Knowing one more JS framework 'ElectronJS'",
-    subtitle: "Desktop to-do list built with Electron",
-    handle: "",
+    title: "Floating To-do list",
+    subtitle: "Desktop to-do list built with ElectronJS",
+    category: "Other",
     borderColor: "#06B6D4",
     gradient: "linear-gradient(135deg, #06B6D4, #000)",
     url: "https://github.com/atharvaghayal/Floating-To-do-list"
+  },
+  {
+    title: "Weather API App",
+    subtitle: "Live forecast insights with hourly weather tracking and predictive alerts",
+    category: "Web",
+    borderColor: "#3B82F6",
+    gradient: "linear-gradient(145deg, #3B82F6, #000)",
+    url: "",
+    isBlankCanvas: true
+  },
+  {
+    title: "SBL Bookstore Frontend",
+    subtitle: "HTML/CSS/JS bookstore experience with catalog browsing",
+    category: "Web",
+    borderColor: "#F472B6",
+    gradient: "linear-gradient(145deg, #F472B6, #000)",
+    url: "",
+    isBlankCanvas: true
   }
 ];
-function App() {
-  const firstSectionItems = [
-    ...items.slice(0, 2),
-    items[4],
-    ...items.slice(3, 4),
-    ...items.slice(5, 7)
-  ];
-  const remainingItems = [items[2], items[9], items[8], items[7]];
-  const projectSections = [
-    {
-      title: "Want to be part of my projects?",
-      items: firstSectionItems
-    },
-    {
-      title: "Case Studies",
-      items: [
-        { ...items[5] },
-        { ...items[9] },
-        {
-          title: "Weather API App",
-          subtitle: "Live forecast insights with hourly weather tracking and predictive alerts",
-          handle: "",
-          borderColor: "#3B82F6",
-          gradient: "linear-gradient(145deg, #3B82F6, #000)",
-          url: ""
-        }
-      ]
-    },
-    {
-      title: "Labs / R&D",
-      items: [items[1], items[0], items[3], items[8]]
-    },
-    {
-      title: "College Group Projects",
-      items: [
-        items[4],
-        { ...items[6] },
-        {
-          title: "SBL Bookstore Frontend",
-          subtitle: "HTML/CSS/JS bookstore experience with catalog browsing and responsive checkout design",
-          handle: "",
-          borderColor: "#F472B6",
-          gradient: "linear-gradient(145deg, #F472B6, #000)",
-          url: ""
-        },
-        {
-          title: "Highschool Library Master",
-          subtitle: "Smart book tracking and student borrowing management for campus libraries",
-          handle: "",
-          borderColor: "#FBBF24",
-          gradient: "linear-gradient(145deg, #FBBF24, #000)",
-          url: ""
-        }
-      ]
-    },
-    {
-      title: "Additional Work :",
-      items: remainingItems
-    }
-  ];
 
+const categories = ["All", "Web", "AI/ML", "Data", "Other"];
+
+const Projects = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [filteredItems, setFilteredItems] = useState(items);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [elasticOffset, setElasticOffset] = useState(0);
   const elasticReleaseTimeout = useRef(null);
   const touchStartY = useRef(null);
+
+  useEffect(() => {
+    if (activeCategory === "All") {
+      setFilteredItems(items);
+    } else {
+      setFilteredItems(items.filter(item => item.category === activeCategory));
+    }
+  }, [activeCategory]);
 
   useEffect(() => {
     const releaseElastic = () => {
@@ -216,61 +191,75 @@ function App() {
     };
   }, []);
 
+  const handleProjectClick = (project) => {
+    if (project.isBlankCanvas) return;
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
   return (
-    <ClickSpark
-      sparkColor='#fff'
-      sparkSize={8}
-      sparkRadius={12}
-      sparkCount={8}
-      duration={400}
-    >
+    <AnimatedPage>
       <div
-        className="App"
         style={{
           minHeight: '100vh',
-          background: '#000',
           position: 'relative',
           zIndex: 1,
           '--elastic-offset': `${elasticOffset}px`
         }}
       >
-        <div className="card-header">
-          <a 
-            href="/" 
-            className="home-link"
-            onClick={(e) => {
-              e.preventDefault();
-              window.location.href = 'http://localhost:3000/';
-            }}
+        <div className="content-wrapper" style={{ position: 'relative', zIndex: 2, paddingTop: '4rem' }}>
+          
+          <motion.div 
+            className="portfolio-header"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            Home
-          </a>
-          <ul className="card-tabs">
-            <li>
-              <a
-                href="#Blogs"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.location.href = 'http://localhost:3002/';
-                }}
-              >
-                Blogs
-              </a>
-            </li>
-          </ul>
-        </div>
+            <h1 className="projects-title">Featured Work</h1>
+            <p className="projects-subtitle">A collection of things I've built, experimented with, and learned from.</p>
+            
+            <div className="category-filters">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  className={`filter-btn ${activeCategory === cat ? 'active' : ''}`}
+                  onClick={() => setActiveCategory(cat)}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </motion.div>
 
-        <div className="content-wrapper" style={{ position: 'relative', zIndex: 2 }}>
-          {projectSections.map((section) => (
-            <section className="project-section" key={section.title}>
-              <h2 className="projects-invite">{section.title}</h2>
-              <ChromaGrid items={section.items} />
-            </section>
-          ))}
+          <motion.section 
+            className="project-gallery"
+            layout
+          >
+            <AnimatePresence mode="popLayout">
+              <motion.div
+                key={activeCategory}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ChromaGrid 
+                  items={filteredItems} 
+                  onProjectClick={handleProjectClick}
+                />
+              </motion.div>
+            </AnimatePresence>
+          </motion.section>
+          
+          <ProjectModal 
+            project={selectedProject}
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+          />
         </div>
       </div>
-    </ClickSpark>
+    </AnimatedPage>
   );
-}
+};
 
-export default App;
+export default Projects;

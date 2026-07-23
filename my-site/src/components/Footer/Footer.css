@@ -31,7 +31,8 @@
   }
 
   .footer-content {
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
+    /* Stack elements vertically */
     text-align: center;
     padding: 1.5rem 1rem;
     gap: 1.5rem;
@@ -47,14 +48,15 @@
   .footer-content {
     padding: 1.2rem 0.8rem;
   }
-  
+
   .footer-text {
     font-size: 0.85rem;
     line-height: 1.4;
   }
 
   .footer-btn {
-    width: 100%; /* Make action buttons full width for better touch targets */
+    width: 100%;
+    /* Make action buttons full width for better touch targets */
     justify-content: center;
   }
 }
@@ -64,7 +66,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
-  align-items: center; /* center columns vertically */
+  align-items: center;
+  /* center columns vertically */
   padding: 0.5rem;
   width: 100%;
 }
@@ -78,10 +81,12 @@
 }
 
 .footer-text {
-  font-size: 0.95rem; /* slightly smaller */
+  font-size: 0.95rem;
+  /* slightly smaller */
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.2;
-  margin: 0; /* remove default spacing */
+  margin: 0;
+  /* remove default spacing */
 }
 
 .footer-heading {
@@ -94,7 +99,8 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  flex-wrap: wrap; /* allow wrap on small screens */
+  flex-wrap: wrap;
+  /* allow wrap on small screens */
 }
 
 /* --- Center Column --- */
@@ -114,13 +120,17 @@
 }
 
 .count-up-text {
-  font-size: 2.2rem; /* reduced from 3rem to shorten footer */
+  font-size: 0.95rem;
   font-weight: 700;
-  /* Theme Gradient Text */
-  background: linear-gradient(90deg, #fff, #b19eef);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  display: inline-block;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.count-up-text span {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  opacity: 1 !important;
 }
 
 .views-label {
@@ -131,7 +141,8 @@
 }
 
 .github-views img {
-  border-radius: 4px; /* Matches the badge style */
+  border-radius: 4px;
+  /* Matches the badge style */
 }
 
 /* --- Right Column --- */
@@ -152,22 +163,44 @@
 }
 
 .footer-socials a {
-  font-size: 1.5rem; /* Smaller icons to match screenshot */
+  font-size: 1.5rem;
   color: rgba(255, 255, 255, 0.7);
-  transition: all 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
 }
 
 .footer-socials a:hover {
   color: #fff;
-  transform: scale(1.1) translateY(-2px);
+  transform: scale(1.15) translateY(-3px);
+}
+
+/* Brand-colored hover glows */
+.footer-socials a[aria-label="Email"]:hover {
+  color: #ea4335;
+  filter: drop-shadow(0 0 8px rgba(234, 67, 53, 0.5));
+}
+
+.footer-socials a[aria-label="LinkedIn"]:hover {
+  color: #0a66c2;
+  filter: drop-shadow(0 0 8px rgba(10, 102, 194, 0.5));
+}
+
+.footer-socials a[aria-label="GitHub"]:hover {
+  color: var(--accent-glow);
+  filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.5));
+}
+
+.footer-socials a[aria-label="Resume"]:hover {
+  color: var(--accent-tertiary);
+  filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.5));
 }
 
 /* --- Copyright Bar --- */
 .footer-copyright {
   position: relative;
-  
+
   /* Reduced vertical padding to shrink the footer height */
-  padding: 1rem 0 1rem 0; 
+  padding: 1rem 0 1rem 0;
 
   margin-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -180,10 +213,14 @@
 /* --- Responsive --- */
 @media (max-width: 900px) {
   .footer-grid {
-    grid-template-columns: 1fr; /* Stack columns */
+    grid-template-columns: 1fr;
+    /* Stack columns */
     gap: 3rem;
   }
-  .footer-left, .footer-center, .footer-right {
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
     align-items: center;
     text-align: center;
     justify-self: center;
@@ -193,79 +230,118 @@
 
 @media (max-width: 768px) {
   .footer-card {
-    max-height: 20vh; /* Limit to 20% on tablets and smaller */
-    padding: 0.8rem 0.8rem 0 0.8rem; /* Reduced padding for tablets */
+    padding: 0.8rem 0.8rem 0 0.8rem;
   }
+
   .footer-grid {
-    gap: 1rem; /* Smaller gap on tablets */
+    gap: 1rem;
+    /* Smaller gap on tablets */
   }
+
   .count-up-text {
-    font-size: 1.2rem; /* Smaller on tablets */
+    font-size: 1.2rem;
+    /* Smaller on tablets */
   }
+
   .footer-heading {
-    font-size: 0.95rem; /* Slightly smaller heading */
+    font-size: 0.95rem;
+    /* Slightly smaller heading */
   }
+
   .footer-text {
-    font-size: 0.85rem; /* Slightly smaller text */
+    font-size: 0.85rem;
+    /* Slightly smaller text */
   }
+
   .footer-socials a {
-    font-size: 1.2rem; /* Smaller social icons */
+    font-size: 1.2rem;
+    /* Smaller social icons */
   }
+
   .footer-copyright {
-    padding: 0.8rem 0 0.8rem 0; /* Reduced copyright padding */
-    font-size: 0.8rem; /* Smaller copyright text */
+    padding: 0.8rem 0 0.8rem 0;
+    /* Reduced copyright padding */
+    font-size: 0.8rem;
+    /* Smaller copyright text */
   }
 }
 
 @media (max-width: 600px) {
   .footer-card {
-    padding: 2rem 1rem 0 1rem; /* No bottom padding on mobile card */
-    margin: 0 auto 2rem auto; /* Tighter bottom margin on mobile */
+    padding: 2rem 1rem 0 1rem;
+    /* No bottom padding on mobile card */
+    margin: 0 auto 2rem auto;
+    /* Tighter bottom margin on mobile */
   }
+
   .footer-copyright {
-     padding: 2rem 0 1.5rem 0; /* Same padding on mobile */
+    padding: 2rem 0 1.5rem 0;
+    /* Same padding on mobile */
   }
 }
 
 @media (max-width: 480px) {
   .footer-card {
-    padding: 0.3rem 0.3rem 0 0.3rem; /* Ultra minimal padding */
-    margin: 0 auto 0.3rem auto; /* Minimal bottom margin */
-    height: 20vh; /* Fixed height to 20% of viewport */
-    min-height: 20vh; /* Ensure minimum height */
+    padding: 0.3rem 0.3rem 0 0.3rem;
+    margin: 0 auto 0.3rem auto;
+    min-height: auto;
   }
+
   .footer-grid {
-    gap: 0.4rem; /* Very minimal gap between sections */
+    gap: 0.4rem;
+    /* Very minimal gap between sections */
   }
+
   .footer-center {
-    gap: 0.2rem; /* Minimal center gap */
+    gap: 0.2rem;
+    /* Minimal center gap */
   }
+
   .footer-right {
-    gap: 0.2rem; /* Minimal right gap */
+    gap: 0.2rem;
+    /* Minimal right gap */
   }
+
   .views-counter {
-    gap: 0.05rem; /* Tiny gap in counter */
+    gap: 0.05rem;
+    /* Tiny gap in counter */
   }
+
   .count-up-text {
-    font-size: 0.9rem; /* Very small count-up text */
+    font-size: 0.9rem;
+    /* Very small count-up text */
   }
+
   .footer-heading {
-    font-size: 0.8rem; /* Smaller heading */
-    margin-bottom: 0.1rem; /* Reduce margin */
+    font-size: 0.8rem;
+    /* Smaller heading */
+    margin-bottom: 0.1rem;
+    /* Reduce margin */
   }
+
   .footer-text {
-    font-size: 0.7rem; /* Smaller text */
-    line-height: 1.1; /* Tighter line height */
+    font-size: 0.7rem;
+    /* Smaller text */
+    line-height: 1.1;
+    /* Tighter line height */
   }
+
   .footer-socials {
-    gap: 0.5rem; /* Smaller gap between social icons */
+    gap: 0.5rem;
+    /* Smaller gap between social icons */
   }
+
   .footer-socials a {
-    font-size: 0.9rem; /* Smaller social icons */
+    font-size: 0.9rem;
+    /* Smaller social icons */
   }
+
   .footer-copyright {
-    padding: 0.2rem 0 0.2rem 0; /* Tiny copyright padding */
-    margin-top: 0.2rem; /* Tiny top margin */
-    font-size: 0.65rem; /* Very small copyright text */
+    padding: 0.2rem 0 0.2rem 0;
+    /* Tiny copyright padding */
+    margin-top: 0.2rem;
+    /* Tiny top margin */
+    font-size: 0.65rem;
+    /* Very small copyright text */
   }
 }

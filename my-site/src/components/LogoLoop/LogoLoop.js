@@ -50,6 +50,7 @@ function LogoLoop() {
               key={index}
               src={logo.src}
               alt={logo.alt}
+              title={logo.alt}
               className="logo-item"
               loading="lazy"
               decoding="async"

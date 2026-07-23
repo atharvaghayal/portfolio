@@ -16,6 +16,11 @@ const ClickSpark = ({
   }, []);
 
   const handleClick = useCallback((e) => {
+    // Respect user's motion preferences
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
     const { clientX, clientY } = e;
     const id = Date.now();
 

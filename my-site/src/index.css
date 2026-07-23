@@ -5,8 +5,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #000000;
+  background-color: #0a0a0f;
   min-height: 100vh;
+}
+
+/* Hide default cursor on desktop when custom cursor is active */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  a, button, [role="button"] {
+    cursor: none;
+  }
 }
 
 code {

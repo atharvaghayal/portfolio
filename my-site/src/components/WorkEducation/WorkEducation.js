@@ -66,13 +66,31 @@ const WorkEducation = () => {
           className={`toggle-btn ${activeTab === 'work' ? 'active' : ''}`}
           onClick={() => setActiveTab('work')}
         >
-          <span className="icon">💼</span> Work
+          {activeTab === 'work' && (
+            <motion.span
+              className="toggle-indicator"
+              layoutId="activeTabIndicator"
+              transition={{ type: "spring", stiffness: 400, damping: 30 }}
+            />
+          )}
+          <span className="toggle-btn-content">
+            <span className="icon">💼</span> Work
+          </span>
         </button>
         <button 
           className={`toggle-btn ${activeTab === 'education' ? 'active' : ''}`}
           onClick={() => setActiveTab('education')}
         >
-          <span className="icon">🎓</span> Education
+          {activeTab === 'education' && (
+            <motion.span
+              className="toggle-indicator"
+              layoutId="activeTabIndicator"
+              transition={{ type: "spring", stiffness: 400, damping: 30 }}
+            />
+          )}
+          <span className="toggle-btn-content">
+            <span className="icon">🎓</span> Education
+          </span>
         </button>
       </div>
 
@@ -87,13 +105,16 @@ const WorkEducation = () => {
               exit={{ opacity: 0, x: 20 }}
               transition={{ duration: 0.3 }}
             >
-              {workData.map((item) => (
-                <div 
+              {workData.map((item, index) => (
+                <motion.div 
                   className="info-card" 
                   key={item.id}
                   style={{ 
                     backgroundImage: `${darkOverlay}, ${item.background}`
                   }}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
                 >
                   <img src={item.logo} alt={`${item.title} logo`} className="card-logo" loading="lazy" decoding="async" />
                   
@@ -102,7 +123,7 @@ const WorkEducation = () => {
                     <p className="card-role">{item.role}</p>
                     <p className="card-date">{item.date}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </motion.div>
           ) : (
@@ -114,13 +135,16 @@ const WorkEducation = () => {
               exit={{ opacity: 0, x: 20 }}
               transition={{ duration: 0.3 }}
             >
-              {educationData.map((item) => (
-                <div 
+              {educationData.map((item, index) => (
+                <motion.div 
                   className="info-card wide" 
                   key={item.id}
                   style={{ 
                     backgroundImage: `${darkOverlay}, ${item.background}`
                   }}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
                 >
                   <img src={item.logo} alt={`${item.title} logo`} className="card-logo" loading="lazy" decoding="async" />
 
@@ -129,7 +153,7 @@ const WorkEducation = () => {
                     <p className="card-role">{item.institution}</p>
                     <p className="card-date">{item.date}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </motion.div>
           )}
