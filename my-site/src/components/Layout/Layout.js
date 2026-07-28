@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
       >
         <CustomCursor />
         <a href="#main-content" className="skip-link">Skip to content</a>
-        
+
         {/* Persistent Navigation */}
         <div className="card-header" style={{ zIndex: 1000, position: 'fixed', top: 0, left: '50%', transform: 'translateX(-50%)' }}>
           <Link to="/" className="home-link">Home</Link>
