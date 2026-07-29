@@ -972,3 +972,14 @@ ul {
     color: var(--text-primary) !important;
   }
 }
+
+.logo-loop-slider {
+  animation: none !important;
+}
+
+.section-heading {
+  animation: none !important;
+  background: none !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  color: var(--text-primary) !important;
+}
