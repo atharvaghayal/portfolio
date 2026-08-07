@@ -1,21 +1,54 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaEnvelope, FaLinkedin, FaGithub, FaFileAlt } from 'react-icons/fa';
 import CountUp from '../CountUp';
 import './Footer.css';
 
 const Footer = () => {
   const [viewCount, setViewCount] = useState(0);
+  const [animateViews, setAnimateViews] = useState(false);
+  const viewsCounterRef = useRef(null);
 
+  // Determine the correct portfolio view count.
+  // The count is incremented by exactly +1 only on a genuine first visit.
+  // Refreshes, revisits, new tabs, and returning visitors are all ignored.
   useEffect(() => {
-    const key = 'atharva_portfolio_views';
-    let currentViews = localStorage.getItem(key);
-    if (currentViews) {
-      currentViews = parseInt(currentViews, 10) + 1;
+    const COUNT_KEY   = 'atharva_portfolio_views';
+    const VISITED_KEY = 'atharva_portfolio_visited';
+
+    const alreadyCounted = localStorage.getItem(VISITED_KEY) === 'true';
+    const storedCount    = parseInt(localStorage.getItem(COUNT_KEY) || '0', 10);
+
+    if (!alreadyCounted) {
+      // Genuine first-time visitor — increment and mark as counted
+      const newCount = storedCount + 1;
+      localStorage.setItem(COUNT_KEY,   newCount.toString());
+      localStorage.setItem(VISITED_KEY, 'true');
+      setViewCount(newCount);
     } else {
-      currentViews = 1;
+      // Returning visitor / refresh / new tab — show existing count unchanged
+      setViewCount(storedCount);
     }
-    localStorage.setItem(key, currentViews.toString());
-    setViewCount(currentViews);
+  }, []);
+
+  // Trigger count-up animation when the views counter enters the viewport
+  useEffect(() => {
+    const node = viewsCounterRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setAnimateViews(true);
+          observer.disconnect(); // play only once
+        }
+      },
+      { threshold: 0.25 } // fire when 25% of the counter is visible
+    );
+
+    observer.observe(node);
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -31,9 +64,9 @@ const Footer = () => {
         </div>
 
         <div className="footer-center">
-          <div className="views-counter">
+          <div className="views-counter" ref={viewsCounterRef}>
             <div className="count-up-text">
-              <CountUp end={viewCount} />
+              <CountUp end={viewCount} startAnimation={animateViews} />
             </div>
             <div className="views-label">Portfolio Views</div>
           </div>
@@ -62,4 +95,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footer;

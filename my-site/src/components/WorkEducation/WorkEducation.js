@@ -4,13 +4,21 @@ import './WorkEducation.css';
 
 import sednaLogo from '../../assets/sedna-logo.png';
 import deloitteLogo from '../../assets/deloitte-logo.png';
-import awsLogo from '../../assets/aws-logo.png';
+import durwankurLogo from '../../assets/durwankur-logo.svg';
 import raitLogo from '../../assets/rait-logo.png';
 import mesLogo from '../../assets/mes-logo.png';
 
 const workData = [
   {
     id: 1,
+    title: "Durwankur AI Lab Pvt. Ltd",
+    role: "Full time Software Developer Trainee",
+    date: "June 2026 - July 2026",
+    background: 'linear-gradient(to right, #0f172a, #2563eb, #38bdf8)',
+    logo: durwankurLogo
+  },
+  {
+    id: 2,
     title: "Sedna Technologies",
     role: "Developer Intern",
     date: "Jan 2026 - Apr 2026",
@@ -18,20 +26,12 @@ const workData = [
     logo: sednaLogo
   },
   {
-    id: 2,
+    id: 3,
     title: "Deloitte Data Analytics Virtual Internship Program",
     role: "Certification",
     date: "July 2025",
     background: 'linear-gradient(to right, #009639, #00A9E0, #003B5C, #66B032)',
     logo: deloitteLogo
-  },
-  {
-    id: 3,
-    title: "AWS Academy Graduate",
-    role: "Machine Learning Foundations Certification",
-    date: "April 2025",
-    background: 'linear-gradient(to right, #FF9900, #232F3E, #A7A7A7)',
-    logo: awsLogo
   }
 ];
 
@@ -116,7 +116,9 @@ const WorkEducation = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
                 >
-                  <img src={item.logo} alt={`${item.title} logo`} className="card-logo" loading="lazy" decoding="async" />
+                  <div className="card-logo-wrapper">
+                    <img src={item.logo} alt={`${item.title} logo`} className="card-logo" loading="lazy" decoding="async" />
+                  </div>
                   
                   <div className="card-details">
                     <h3 className="card-title">{item.title}</h3>
@@ -146,7 +148,9 @@ const WorkEducation = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
                 >
-                  <img src={item.logo} alt={`${item.title} logo`} className="card-logo" loading="lazy" decoding="async" />
+                  <div className="card-logo-wrapper-education">
+                    <img src={item.logo} alt={`${item.title} logo`} className="card-logo-education" loading="lazy" decoding="async" />
+                  </div>
 
                   <div className="card-details">
                     <h3 className="card-title">{item.title}</h3>
