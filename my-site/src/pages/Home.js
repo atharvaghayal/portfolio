@@ -20,20 +20,16 @@ const terminalCommands = [
 const typingDelay = 80;
 const deletingDelay = 40;
 const pauseDelay = 2000;
-const maxElasticOffset = 12;
-const elasticReleaseDelay = 120;
+ 
 
 const Home = () => {
   const [terminalText, setTerminalText] = useState('');
-  const [elasticOffset, setElasticOffset] = useState(0);
 
   // Track visibility and scroll direction for the intro animations
   const heroRef = useRef(null);
   const [heroInView, setHeroInView] = useState(false);
   const lastScrollY = useRef(window.scrollY || 0);
   const [scrollingUp, setScrollingUp] = useState(false);
-  const elasticReleaseTimeout = useRef(null);
-  const touchStartY = useRef(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -45,58 +41,7 @@ const Home = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => {
-    const releaseElastic = () => {
-      window.clearTimeout(elasticReleaseTimeout.current);
-      elasticReleaseTimeout.current = window.setTimeout(() => {
-        setElasticOffset(0);
-      }, elasticReleaseDelay);
-    };
-
-    const applyElastic = (deltaY) => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
-      const maxScrollTop = Math.max(
-        0,
-        document.documentElement.scrollHeight - window.innerHeight
-      );
-      const isAtTop = scrollTop <= 0;
-      const isAtBottom = scrollTop >= maxScrollTop - 1;
-
-      if (isAtTop && deltaY < 0) {
-        setElasticOffset(maxElasticOffset);
-        releaseElastic();
-      } else if (isAtBottom && deltaY > 0) {
-        setElasticOffset(-maxElasticOffset);
-        releaseElastic();
-      }
-    };
-
-    const onWheel = (event) => applyElastic(event.deltaY);
-    const onTouchStart = (event) => {
-      touchStartY.current = event.touches[0]?.clientY ?? null;
-    };
-    const onTouchMove = (event) => {
-      if (touchStartY.current === null) return;
-      const currentY = event.touches[0]?.clientY ?? touchStartY.current;
-      applyElastic(touchStartY.current - currentY);
-    };
-    const onScroll = () => {
-      setElasticOffset(0);
-    };
-
-    window.addEventListener('wheel', onWheel, { passive: true });
-    window.addEventListener('touchstart', onTouchStart, { passive: true });
-    window.addEventListener('touchmove', onTouchMove, { passive: true });
-    window.addEventListener('scroll', onScroll, { passive: true });
-
-    return () => {
-      window.clearTimeout(elasticReleaseTimeout.current);
-      window.removeEventListener('wheel', onWheel);
-      window.removeEventListener('touchstart', onTouchStart);
-      window.removeEventListener('touchmove', onTouchMove);
-      window.removeEventListener('scroll', onScroll);
-    };
-  }, []);
+  // (elastic overscroll removed)
 
   // Trigger hero animation when section enters viewport
   useEffect(() => {
@@ -160,9 +105,11 @@ const Home = () => {
     };
   }, [heroInView]);
 
+  
+
   return (
     <AnimatedPage>
-      <div style={{ '--elastic-offset': `${elasticOffset}px`, position: 'relative' }}>
+      <div style={{ position: 'relative' }}>
         <ParticleBackground />
         <motion.header
           ref={heroRef}

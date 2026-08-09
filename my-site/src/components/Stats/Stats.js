@@ -6,8 +6,8 @@ import './Stats.css';
 const Stats = () => {
   const statsData = [
     { label: 'Projects Completed', value: 6 },
-    { label: 'GitHub Commits', value: 364, suffix: '*' },
-    { label: 'LLMs developed', value: 0 },
+    { label: 'GitHub Commits', value: 371, suffix: '*' },
+    { label: 'LLMs developed', value: 1 },
     { label: 'Years Coding', value: 3, suffix: '*' },
   ];
 

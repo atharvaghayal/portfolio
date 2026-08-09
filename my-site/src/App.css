@@ -298,6 +298,41 @@ ul {
   opacity: 1;
 }
 
+.terminal-window::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  padding: 1px;
+  background: conic-gradient(from var(--highlight-angle, 0deg),
+      rgba(99, 255, 138, 0) 0deg 320deg,
+      rgba(99, 255, 138, 0.96) 320deg 335deg,
+      rgba(99, 255, 138, 0.54) 335deg 348deg,
+      rgba(99, 255, 138, 0) 348deg 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 0 18px rgba(99, 255, 138, 0.18));
+  opacity: 1;
+  animation: highlightPulse 5.4s linear infinite;
+}
+
+@keyframes highlightPulse {
+  to {
+    --highlight-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal-window::after {
+    animation: none !important;
+    opacity: 0.18;
+  }
+}
+
 @property --border-angle {
   syntax: '<angle>';
   initial-value: 0deg;
@@ -961,20 +996,12 @@ ul {
     opacity: 1;
   }
 
-  .logo-loop-slider {
-    animation: none !important;
-  }
-
   .section-heading {
     animation: none !important;
     background: none !important;
     -webkit-text-fill-color: var(--text-primary) !important;
     color: var(--text-primary) !important;
   }
-}
-
-.logo-loop-slider {
-  animation: none !important;
 }
 
 .section-heading {
