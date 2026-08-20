@@ -4,13 +4,27 @@ import ChromaGrid from '../components/ChromaGrid/ChromaGrid';
 import AnimatedPage from '../components/Layout/AnimatedPage';
 import ProjectModal from '../components/ProjectModal/ProjectModal';
 import './Projects.css';
+import pythonLogo from '../assets/python.png';
+import reactLogo from '../assets/react.png';
+import javascriptLogo from '../assets/js.png';
+import powerBiLogo from '../assets/powerbi.png';
+import excelLogo from '../assets/msexcel.png';
 
 const maxElasticOffset = 12;
 const elasticReleaseDelay = 120;
 
 const items = [
   {
-    image: "/collegeproject.webp",
+    image: pythonLogo,
+    title: "Self LLM",
+    subtitle: "Self trained LLM on my personal data",
+    category: "AI/ML",
+    borderColor: "#A855F7",
+    gradient: "linear-gradient(145deg, #A855F7, #000)",
+    url: ""
+  },
+  {
+    image: reactLogo,
     title: "Advanced Splitwise app",
     subtitle: "Smart group expense tracking with seamless settlement and shared budgets",
     category: "Web",
@@ -19,16 +33,7 @@ const items = [
     url: "https://github.com/atharvaghayal?tab=repositories"
   },
   {
-    image: "/vault.webp",
-    title: "HydraSync: AI-driven hydration companion",
-    subtitle: "Hourly water intake tracking with sensor-backed hardware and LLM-powered wellness insights",
-    category: "Other",
-    borderColor: "#38BDF8",
-    gradient: "linear-gradient(145deg, #38BDF8, #000)",
-    url: ""
-  },
-  {
-    image: "/quickle.webp",
+    image: javascriptLogo,
     title: "Quickle Word Game",
     subtitle: "Quickle - style guessing game",
     category: "Web",
@@ -37,16 +42,7 @@ const items = [
     url: "https://github.com/atharvaghayal/quickle"
   },
   {
-    image: "/f1.webp",
-    title: "WDC Forecast Engine",
-    subtitle: "F1 statistics prediction and visualization",
-    category: "Data",
-    borderColor: "#34D399",
-    gradient: "linear-gradient(200deg, #34D399, #000)",
-    url: "https://github.com/atharvaghayal/WDC-Forecast-Engine"
-  },
-  {
-    image: "/solar.webp",
+    image: powerBiLogo,
     title: "Solar Panel Potential Estimation",
     subtitle: "ML models to estimate solar panel potential",
     category: "AI/ML",
@@ -55,8 +51,17 @@ const items = [
     url: "https://github.com/atharvaghayal?tab=repositories"
   },
   {
-    image: "/tax.webp",
-    title: "Tax-Sense Engine",
+    image: powerBiLogo,
+    title: "Supply Chain Control Tower",
+    subtitle: "Forecasting + Statistics + SQL + Power BI",
+    category: "Data",
+    borderColor: "#14B8A6",
+    gradient: "linear-gradient(145deg, #14B8A6, #000)",
+    url: ""
+  },
+  {
+    image: excelLogo,
+    title: "Tax Calculator",
     subtitle: "Tax calculator for current tax regimes",
     category: "Web",
     borderColor: "#10B981",
@@ -64,58 +69,13 @@ const items = [
     url: "https://github.com/atharvaghayal/Tax-Calc-by-Atharva-Ghayal"
   },
   {
-    image: "invest.webp",
-    title: "BudgetBot & capital analysis",
+    image: powerBiLogo,
+    title: "Budgetbot & Investment analysis",
     subtitle: "College mini project for budgeting & investments",
     category: "Web",
     borderColor: "#F59E0B",
     gradient: "linear-gradient(165deg, #F59E0B, #000)",
     url: "https://github.com/atharvaghayal/Sem-6-mini-project."
-  },
-  {
-    image: "/vault.webp",
-    title: "My Learning Vault",
-    subtitle: "Collection of personal handwritten notes",
-    category: "Web",
-    borderColor: "#F97316",
-    gradient: "linear-gradient(155deg, #F97316, #000)",
-    url: "https://github.com/atharvaghayal/Notes-Web-Application"
-  },
-  {
-    image: "/todo.webp",
-    title: "COVID-Public-Health-Data-Analysis",
-    subtitle: "Analysis of Data of Spreading of virus with respect to effect!",
-    category: "Data",
-    borderColor: "#8B0000",
-    gradient: "linear-gradient(135deg, #808080, #8B0000)",
-    url: "https://github.com/atharvaghayal/Floating-To-do-list"
-  },
-  {
-    image: "/todo.webp",
-    title: "Floating To-do list",
-    subtitle: "Desktop to-do list built with ElectronJS",
-    category: "Other",
-    borderColor: "#06B6D4",
-    gradient: "linear-gradient(135deg, #06B6D4, #000)",
-    url: "https://github.com/atharvaghayal/Floating-To-do-list"
-  },
-  {
-    title: "Weather API App",
-    subtitle: "Live forecast insights with hourly weather tracking and predictive alerts",
-    category: "Web",
-    borderColor: "#3B82F6",
-    gradient: "linear-gradient(145deg, #3B82F6, #000)",
-    url: "",
-    isBlankCanvas: true
-  },
-  {
-    title: "SBL Bookstore Frontend",
-    subtitle: "HTML/CSS/JS bookstore experience with catalog browsing",
-    category: "Web",
-    borderColor: "#F472B6",
-    gradient: "linear-gradient(145deg, #F472B6, #000)",
-    url: "",
-    isBlankCanvas: true
   }
 ];
 
